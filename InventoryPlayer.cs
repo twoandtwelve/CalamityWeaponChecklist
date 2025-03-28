@@ -10,24 +10,35 @@ namespace CalamityWeaponChecklist.Common.Players
     {
         public IList<string> checklist = new List<string>();
 
-
-        public override bool OnPickup(Item item)
+        public void UpdateChecklist(Item item)
         {
-            
             if (checklist.Contains(item.Name))
             {
                 Main.NewText(Player.name + " already has " + item.Name);
                 Main.NewText(Player.name + " list size is STILL " + checklist.Count);
-                return true;
             }
             else
             {
                 checklist.Add(item.Name);
-                Main.NewText(Player.name + " picked up " + item.Name);
+                Main.NewText(Player.name + " acquired " + item.Name);
                 Main.NewText(Player.name + " INCREASED list size to " + checklist.Count);
             }
+        }
+
+        public override void PostBuyItem(NPC vendor, Item[] shop, Item item)
+        {
+            UpdateChecklist(item);
+        }
+
+
+        public override bool OnPickup(Item item)
+        {
+            UpdateChecklist(item);
             return true;
         }
+
+
+
 
         public override void SaveData(TagCompound tag)
         {
