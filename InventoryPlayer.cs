@@ -8,19 +8,19 @@ namespace CalamityWeaponChecklist.Common.Players
 {
     public class InventoryPlayer : ModPlayer
     {
-        public IList<string> checklist = new List<string>();
+        public IList<Item> checklist = new List<Item>();
 
         public void UpdateChecklist(Item item)
         {
-            if (checklist.Contains(item.Name))
+            if (checklist.Any(x => x.Name == item.Name))
             {
-                Main.NewText(Player.name + " already has " + item.Name);
+                Main.NewText(Player.name + " already has " + item);
                 Main.NewText(Player.name + " list size is STILL " + checklist.Count);
             }
             else
             {
-                checklist.Add(item.Name);
-                Main.NewText(Player.name + " acquired " + item.Name);
+                checklist.Add(item);
+                Main.NewText(Player.name + " acquired " + item);
                 Main.NewText(Player.name + " INCREASED list size to " + checklist.Count);
             }
         }
@@ -37,9 +37,6 @@ namespace CalamityWeaponChecklist.Common.Players
             return true;
         }
 
-
-
-
         public override void SaveData(TagCompound tag)
         {
             tag["CalamityWeaponChecklist"] = checklist;
@@ -47,7 +44,7 @@ namespace CalamityWeaponChecklist.Common.Players
 
         public override void LoadData(TagCompound tag)
         { 
-            checklist = tag.GetList<string>("CalamityWeaponChecklist");
+            checklist = tag.GetList<Item>("CalamityWeaponChecklist");
         }
 
         public override void OnEnterWorld()
