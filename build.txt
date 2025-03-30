@@ -1,3 +1,4 @@
 displayName = Calamity Weapon Checklist
 author = Jacky
 version = 0.1
+modReferences = CalamityMod@2.0.4

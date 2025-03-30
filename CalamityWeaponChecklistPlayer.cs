@@ -1,12 +1,13 @@
 using Terraria;
+using Terraria.DataStructures;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace CalamityWeaponChecklist.Common.Players
+namespace CalamityWeaponChecklist
 {
-    public class InventoryPlayer : ModPlayer
+    public class CalamityWeaponChecklistPlayer : ModPlayer
     {
         public IList<Item> checklist = new List<Item>();
 
