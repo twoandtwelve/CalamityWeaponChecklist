@@ -1,75 +1,72 @@
-using Terraria;
-using Terraria.DataStructures;
+﻿using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace CalamityWeaponChecklist
 {
     public class CalamityWeaponChecklistPlayer : ModPlayer
     {
-        public IList<Item> checklist = new List<Item>();
-        public bool findChestItemsPreference = true;
+        // Track only item.type values for weapons acquired
+        public HashSet<int> checklist = new HashSet<int>();
 
         public void AddItemToList(Item item)
         {
-            if (checklist.Any(x => x.type == item.type))
-            {
-                Main.NewText(Player.name + " already has " + item);
-            }
-            else
-            {
-                checklist.Add(item);
-                Main.NewText(Player.name + " acquired " + item);
-            }
+            int type = item.type;
+
+            // Only track Calamity weapons
+            if (!CalamityWeaponChecklist.calamityWeaponTypes.Contains(type))
+                return;
+
+            // Add silently to the HashSet
+            checklist.Add(type);
         }
 
         public override void PreUpdate()
         {
-            //Main.NewText("PreUpdate tick");
-            ChestCheck();
+            InventoryScan();
         }
 
         public override void UpdateAutopause()
         {
-            //Main.NewText("UpdateAutopause tick");
-            ChestCheck();
+            InventoryScan();
         }
 
-        private void ChestCheck()
+        private void InventoryScan()
         {
             if (Main.dedServ || Player.whoAmI != Main.myPlayer)
                 return;
-            // Check player inventory
+
+            // Scan main inventory slots 0–58
             for (int i = 0; i < 59; i++)
             {
-                if (!Player.inventory[i].IsAir)
-                {
-                    // Count how many potential weapons we have in inventory
-                    if (CalamityWeaponChecklist.calamityWeapons.Any(w => w.Type == Player.inventory[i].type))
-                    {
-                        bool alreadyInList = checklist.Any(x => x.type == Player.inventory[i].type);
-                        if (!alreadyInList)
-                        {
-                            AddItemToList(Player.inventory[i]);
-                        }
-                    }
-                }
+                Item invItem = Player.inventory[i];
+
+                if (invItem.IsAir)
+                    continue;
+
+                int type = invItem.type;
+
+                // Only count Calamity weapons
+                if (!CalamityWeaponChecklist.calamityWeaponTypes.Contains(type))
+                    continue;
+
+                checklist.Add(type);
+
             }
         }
 
-
+        // Save HashSet<int>
         public override void SaveData(TagCompound tag)
         {
-            tag["CalamityWeaponChecklist"] = checklist.Select(ItemIO.Save).ToList();
+            tag["CalamityWeaponChecklist"] = new List<int>(checklist);
         }
 
+        // Load HashSet<int>
         public override void LoadData(TagCompound tag)
         {
-            checklist = tag.GetList<TagCompound>("CalamityWeaponChecklist").Select(ItemIO.Load).ToList();
+            var list = tag.Get<List<int>>("CalamityWeaponChecklist");
+            checklist = new HashSet<int>(list);
         }
-
     }
-
 }
