@@ -25,14 +25,15 @@ namespace CalamityWeaponChecklist
             }
         }
 
-        public override void UpdateAutopause()
+        public override void PreUpdate()
         {
+            //Main.NewText("PreUpdate tick");
             ChestCheck();
         }
 
-
-        public override void PreUpdate()
+        public override void UpdateAutopause()
         {
+            //Main.NewText("UpdateAutopause tick");
             ChestCheck();
         }
 
@@ -53,36 +54,6 @@ namespace CalamityWeaponChecklist
                         {
                             AddItemToList(Player.inventory[i]);
                         }
-                    }
-                }
-            }
-
-            // Check chest contents if a chest is open
-            if (Player.chest != -1 &&
-                (Player.chest != Player.lastChest || (Main.autoPause && Main.gamePaused)) &&
-                findChestItemsPreference)
-            {
-                Item[] items;
-                // Determine which chest to check
-                if (Player.chest == -2)
-                    items = Player.bank.item; // Piggy Bank
-                else if (Player.chest == -3)
-                    items = Player.bank2.item; // Safe
-                else if (Player.chest == -4)
-                    items = Player.bank3.item; // Defender's Forge
-                else if (Player.chest == -5)
-                    items = Player.bank4.item; // Void Vault
-                else
-                    items = Main.chest[Player.chest].item; // Regular chest
-
-                // Check each item in the chest
-                for (int i = 0; i < 40; i++) // 40 is the max number of slots in a chest
-                {
-                    if (!items[i].IsAir &&
-                        !checklist.Any(x => x.type == items[i].type) &&
-                        CalamityWeaponChecklist.calamityWeapons.Any(w => w.Type == items[i].type))
-                    {
-                        AddItemToList(items[i]);
                     }
                 }
             }
