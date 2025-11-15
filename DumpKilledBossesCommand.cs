@@ -23,7 +23,7 @@ namespace CalamityWeaponChecklist
             // Main.SavePath is usually: Documents/My Games/Terraria/tModLoader
             string path = Path.Combine(Main.SavePath, "WorldBossesKilled.txt");
 
-            var defeated = CalamityWeaponChecklistSystem.DefeatedBossTypes;
+            var defeated = BossTracker.DefeatedBossTypes;
 
             List<string> lines = new List<string>();
 

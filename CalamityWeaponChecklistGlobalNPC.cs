@@ -18,7 +18,7 @@ namespace CalamityWeaponChecklist
 
             int npcType = GetCanonicalBossType(npc.type);
 
-            CalamityWeaponChecklistSystem.DefeatedBossTypes.Add(npcType);
+            BossTracker.DefeatedBossTypes.Add(npcType);
         }
 
         private int GetCanonicalBossType(int type)

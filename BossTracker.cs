@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace CalamityWeaponChecklist
 {
-    public class CalamityWeaponChecklistSystem : ModSystem
+    public class BossTracker : ModSystem
     {
         public static HashSet<int> DefeatedBossTypes = new HashSet<int>();
 
