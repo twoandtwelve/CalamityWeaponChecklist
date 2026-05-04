@@ -62,9 +62,9 @@ namespace CalamityWeaponChecklist
 
                     var info = new WeaponInfo(mi.Type, name, category);
 
-                    if (WeaponBossMappings.Mapping.TryGetValue(mi.Type, out int bossType))
+                    if (WeaponBossMappings.Mapping.TryGetValue(mi.Type, out List<List<int>> bossRequirements))
                     {
-                        info.DependentBossType = bossType;
+                        info.DependentBosses = bossRequirements;
                     }
 
                     // Store in collections

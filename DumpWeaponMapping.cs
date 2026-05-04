@@ -17,11 +17,27 @@ namespace CalamityWeaponChecklist
             }
 
             mod.Logger.Info("----- Weapon Mapping Template Start -----");
+            mod.Logger.Info("// Format: { itemType, \"bossGroups\" }");
+            mod.Logger.Info("// OR = | , AND = & , -1 = pre-boss");
+            mod.Logger.Info("");
 
             foreach (var weapon in CalamityWeaponChecklist.calamityWeapons
                          .OrderBy(w => w.Name))
             {
-                mod.Logger.Info($"{{ {weapon.Type}, -1 }}, // {weapon.Name}");
+                string template;
+
+                if (weapon.DependentBosses == null || weapon.DependentBosses.Count == 0)
+                {
+                    template = "-1";
+                }
+                else
+                {
+                    template = string.Join("|",
+                        weapon.DependentBosses.Select(group =>
+                            string.Join("&", group)));
+                }
+
+                mod.Logger.Info($"{{ {weapon.Type}, \"{template}\" }}, // {weapon.Name}");
             }
 
             mod.Logger.Info("----- Weapon Mapping Template End -----");

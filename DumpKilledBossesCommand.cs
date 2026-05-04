@@ -29,14 +29,27 @@ namespace CalamityWeaponChecklist
 
             List<string> lines = new List<string>();
 
-            lines.Add("// Format: { itemType, bossType }, // Weapon Name");
+            lines.Add("// Format: { itemType, (boss groups) }, // Weapon Name");
+            lines.Add("// OR groups are separated by |, AND groups by &");
             lines.Add("");
 
             foreach (var weapon in CalamityWeaponChecklist.calamityWeapons
                          .OrderBy(w => w.Name))
             {
-                int boss = weapon.DependentBossType;
-                lines.Add($"{{ {weapon.Type}, {boss} }}, // {weapon.Name}");
+                string bossString;
+
+                if (weapon.DependentBosses == null || weapon.DependentBosses.Count == 0)
+                {
+                    bossString = "-1";
+                }
+                else
+                {
+                    bossString = string.Join("|",
+                        weapon.DependentBosses.Select(group =>
+                            string.Join("&", group)));
+                }
+
+                lines.Add($"{{ {weapon.Type}, \"{bossString}\" }}, // {weapon.Name}");
             }
 
             File.WriteAllLines(path, lines);
