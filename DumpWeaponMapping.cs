@@ -1,46 +1,60 @@
-﻿using System.Linq;
+﻿using Terraria;
 using Terraria.ModLoader;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 
 namespace CalamityWeaponChecklist
 {
-    public static class DumpWeaponmapping
+    public class DumpWeaponMappingCommand : ModCommand
     {
-        public static void Dump()
-        {
-            var mod = ModContent.GetInstance<CalamityWeaponChecklist>();
+        public override CommandType Type => CommandType.Chat;
 
+        public override string Command => "dumpweapons";
+
+        public override string Usage => "/dumpweapons";
+
+        public override string Description => "Dumps all Calamity weapons and their mapping state to a text file.";
+
+        public override void Action(CommandCaller caller, string input, string[] args)
+        {
             if (CalamityWeaponChecklist.calamityWeapons == null ||
                 CalamityWeaponChecklist.calamityWeapons.Count == 0)
             {
-                mod.Logger.Warn("[Checklist] No weapons loaded. Cannot dump mapping template.");
+                Main.NewText("No weapons loaded. Is Calamity loaded?");
                 return;
             }
 
-            mod.Logger.Info("----- Weapon Mapping Template Start -----");
-            mod.Logger.Info("// Format: { itemType, \"bossGroups\" }");
-            mod.Logger.Info("// OR = | , AND = & , -1 = pre-boss");
-            mod.Logger.Info("");
+            string path = Path.Combine(Main.SavePath, "CalamityWeaponMapping.txt");
+
+            List<string> lines = new List<string>();
+
+            lines.Add("// Format: { itemType, (boss groups) }, // Weapon Name");
+            lines.Add("// OR groups are separated by |, AND groups by &");
+            lines.Add("");
 
             foreach (var weapon in CalamityWeaponChecklist.calamityWeapons
                          .OrderBy(w => w.Name))
             {
-                string template;
+                string bossString;
 
                 if (weapon.DependentBosses == null || weapon.DependentBosses.Count == 0)
                 {
-                    template = "-1";
+                    bossString = "-1";
                 }
                 else
                 {
-                    template = string.Join("|",
+                    bossString = string.Join("|",
                         weapon.DependentBosses.Select(group =>
                             string.Join("&", group)));
                 }
 
-                mod.Logger.Info($"{{ {weapon.Type}, \"{template}\" }}, // {weapon.Name}");
+                lines.Add($"{{ {weapon.Type}, \"{bossString}\" }}, // {weapon.Name}");
             }
 
-            mod.Logger.Info("----- Weapon Mapping Template End -----");
+            File.WriteAllLines(path, lines);
+
+            Main.NewText($"Weapon mapping written to: {path}");
         }
     }
 }

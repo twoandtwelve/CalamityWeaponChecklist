@@ -1,60 +1,68 @@
-﻿using Terraria;
-using Terraria.ModLoader;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace CalamityWeaponChecklist
 {
-    public class DumpWeaponMappingCommand : ModCommand
+    public class DumpKilledBossesCommand : ModCommand
     {
         public override CommandType Type => CommandType.Chat;
-
-        public override string Command => "dumpweapons";
-
-        public override string Usage => "/dumpweapons";
-
-        public override string Description => "Dumps all Calamity weapons and their mapping state to a text file.";
+        public override string Command => "dumpkilledbosses";
+        public override string Usage => "/dumpkilledbosses";
+        public override string Description => "Dumps all killed bosses in the current world.";
 
         public override void Action(CommandCaller caller, string input, string[] args)
         {
-            if (CalamityWeaponChecklist.calamityWeapons == null ||
-                CalamityWeaponChecklist.calamityWeapons.Count == 0)
+            var killed = BossTracker.DefeatedBossTypes;
+
+            if (killed == null || killed.Count == 0)
             {
-                Main.NewText("No weapons loaded. Is Calamity loaded?");
+                Main.NewText("No bosses recorded yet.");
                 return;
             }
 
-            string path = Path.Combine(Main.SavePath, "CalamityWeaponMapping.txt");
+            string path = Path.Combine(Main.SavePath, "KilledBossesDump.txt");
 
-            List<string> lines = new List<string>();
+            List<string> lines = new();
 
-            lines.Add("// Format: { itemType, (boss groups) }, // Weapon Name");
-            lines.Add("// OR groups are separated by |, AND groups by &");
+            lines.Add("=== KILLED BOSSES ===");
             lines.Add("");
 
-            foreach (var weapon in CalamityWeaponChecklist.calamityWeapons
-                         .OrderBy(w => w.Name))
+            foreach (int bossType in killed.OrderBy(x => x))
             {
-                string bossString;
+                string name = GetBossNameFromNPC(bossType);
+                string mod = GetModName(bossType);
 
-                if (weapon.DependentBosses == null || weapon.DependentBosses.Count == 0)
-                {
-                    bossString = "-1";
-                }
-                else
-                {
-                    bossString = string.Join("|",
-                        weapon.DependentBosses.Select(group =>
-                            string.Join("&", group)));
-                }
-
-                lines.Add($"{{ {weapon.Type}, \"{bossString}\" }}, // {weapon.Name}");
+                lines.Add($"{bossType}: {mod}/{name}");
             }
 
             File.WriteAllLines(path, lines);
 
-            Main.NewText($"Weapon mapping written to: {path}");
+            Main.NewText($"Killed bosses dumped to: {path}");
+        }
+
+        private string GetBossNameFromNPC(int type)
+        {
+            if (ContentSamples.NpcsByNetId.TryGetValue(type, out NPC npc) && npc != null)
+            {
+                return npc.FullName;
+            }
+
+            return "Unknown Boss";
+        }
+
+        private string GetModName(int type)
+        {
+            if (ContentSamples.NpcsByNetId.TryGetValue(type, out NPC npc) && npc != null)
+            {
+                return npc.ModNPC?.Mod?.Name ?? "Terraria";
+            }
+
+            return "UnknownMod";
         }
     }
 }

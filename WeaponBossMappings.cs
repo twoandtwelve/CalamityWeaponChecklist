@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using CalamityMod.NPCs.HiveMind;
+using CalamityMod.NPCs.Perforator;
+using System.Collections.Generic;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -120,7 +122,10 @@ namespace CalamityWeaponChecklist
             { 7696, new List<List<int>>() }, // Brimstone Sword
             { 7697, new List<List<int>>() }, // Briny Baron
             { 8150, new List<List<int>>() }, // Brittle Star Staff
-            { 7698, new List<List<int>>() }, // Broken Biome Blade
+            { 7698, new List<List<int>>{ // Broken Biome Blade
+                    new() {ModContent.NPCType<HiveMind>() },
+                    new() {ModContent.NPCType<PerforatorBodyLarge>() }
+            } }, 
             { 7866, new List<List<int>>() }, // Bullet-Filled Shotgun
             { 7699, new List<List<int>>() }, // Burning Revelation
             { 7556, new List<List<int>>() }, // Burning Sea
