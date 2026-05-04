@@ -1,4 +1,5 @@
-﻿using CalamityMod.NPCs.HiveMind;
+﻿using CalamityMod.NPCs.DevourerofGods;
+using CalamityMod.NPCs.HiveMind;
 using CalamityMod.NPCs.Perforator;
 using System.Collections.Generic;
 using Terraria.ID;
@@ -19,7 +20,9 @@ namespace CalamityWeaponChecklist
             //    }
             // leave new list empty if pre boss
 
-            { 7523 , new List<List<int>>() }, // A-PLS: Pulse Rifle
+            { 7523 , new List<List<int>>{ // A-PLS: Pulse Rifle
+                    new() {ModContent.NPCType<DevourerofGodsHead>() }
+            } },  
             { 8141, new List<List<int>>() }, // Abandoned Slime Staff
             { 7672, new List<List<int>>() }, // Absolute Zero
             { 7673, new List<List<int>>() }, // Abyss Blade
@@ -124,7 +127,7 @@ namespace CalamityWeaponChecklist
             { 8150, new List<List<int>>() }, // Brittle Star Staff
             { 7698, new List<List<int>>{ // Broken Biome Blade
                     new() {ModContent.NPCType<HiveMind>() },
-                    new() {ModContent.NPCType<PerforatorBodyLarge>() }
+                    new() {ModContent.NPCType<PerforatorHive>() }
             } }, 
             { 7866, new List<List<int>>() }, // Bullet-Filled Shotgun
             { 7699, new List<List<int>>() }, // Burning Revelation
