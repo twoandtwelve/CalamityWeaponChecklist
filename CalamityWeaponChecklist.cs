@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Terraria;
 using Terraria.ModLoader;
+using Terraria.UI;
+using Microsoft.Xna.Framework;
 
 namespace CalamityWeaponChecklist
 {
@@ -11,6 +13,21 @@ namespace CalamityWeaponChecklist
         public static List<WeaponInfo> calamityWeapons;
         public static Dictionary<int, WeaponInfo> calamityWeaponLookup;
         public static HashSet<int> calamityWeaponTypes;
+
+
+        public override void Load()
+        {
+        }
+
+
+
+        public override void Unload()
+        {
+
+            calamityWeapons = null;
+            calamityWeaponLookup = null;
+            calamityWeaponTypes = null;
+        }
 
         public override void PostSetupContent()
         {
@@ -45,10 +62,31 @@ namespace CalamityWeaponChecklist
 
                     var info = new WeaponInfo(mi.Type, name, category);
 
+                    if (WeaponBossMappings.Mapping.TryGetValue(mi.Type, out int bossType))
+                    {
+                        info.DependentBossType = bossType;
+                    }
+
                     // Store in collections
                     calamityWeapons.Add(info);
                     calamityWeaponLookup[mi.Type] = info;
                     calamityWeaponTypes.Add(mi.Type);
+                }
+
+                foreach (var info in calamityWeapons)
+                {
+                    if (!WeaponBossMappings.Mapping.ContainsKey(info.Type))
+                    {
+                        Logger.Warn($"[Checklist] Missing boss mapping for: {info.Name} ({info.Type})");
+                    }
+                }
+
+                foreach (var mappedType in WeaponBossMappings.Mapping.Keys)
+                {
+                    if (!calamityWeaponTypes.Contains(mappedType))
+                    {
+                        Logger.Warn($"[Checklist] Mapping exists for removed weapon type: {mappedType}");
+                    }
                 }
             }
         }

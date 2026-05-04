@@ -8,12 +8,7 @@ namespace CalamityWeaponChecklist
     {
         public override void OnKill(NPC npc)
         {
-            // Only consider bosses
             if (!npc.boss)
-                return;
-
-            // Optional: skip weird cases/statue spawns if you care
-            if (npc.SpawnedFromStatue)
                 return;
 
             int npcType = GetCanonicalBossType(npc.type);
