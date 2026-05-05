@@ -29,10 +29,6 @@ namespace CalamityWeaponChecklist
             if (type == 396 || type == 397 || type == 398)
                 return NPCID.MoonLordCore;
 
-            // The Twins (Retinazer + Spazmatism)
-            if (type == 125 || type == 126)
-                return NPCID.Retinazer;
-
             // === CALAMITY MULTI-PART BOSSES ===
 
             // Astrum Deus

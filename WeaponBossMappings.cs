@@ -1,6 +1,13 @@
-﻿using CalamityMod.NPCs.DevourerofGods;
+﻿using CalamityMod.NPCs.AstrumAureus;
+using CalamityMod.NPCs.DevourerofGods;
 using CalamityMod.NPCs.HiveMind;
+using CalamityMod.NPCs.Leviathan;
 using CalamityMod.NPCs.Perforator;
+using CalamityMod.NPCs.Polterghast;
+using CalamityMod.NPCs.Signus;
+using CalamityMod.NPCs.SlimeGod;
+using CalamityMod.NPCs.Yharon;
+using Steamworks;
 using System.Collections.Generic;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -23,24 +30,63 @@ namespace CalamityWeaponChecklist
             { 7523 , new List<List<int>>{ // A-PLS: Pulse Rifle
                     new() {ModContent.NPCType<DevourerofGodsHead>() }
             } },  
-            { 8141, new List<List<int>>() }, // Abandoned Slime Staff
-            { 7672, new List<List<int>>() }, // Absolute Zero
-            { 7673, new List<List<int>>() }, // Abyss Blade
-            { 7533, new List<List<int>>() }, // Abyss Shocker
-            { 7532, new List<List<int>>() }, // Abyssal Tome
-            { 7534, new List<List<int>>() }, // Acid Gun
-            { 7840, new List<List<int>>() }, // Ace's High
+            { 8141, new List<List<int>>{ // Abandoned Slime Staff
+                    new() {ModContent.NPCType<AstrumAureus>() },
+            } }, 
+            { 7672, new List<List<int>>{ // Absolute Zero
+                    new() {NPCID.Plantera},
+            } }, 
+            { 7673, new List<List<int>>{ // Abyss Blade
+                    new() {ModContent.NPCType<Anahita>(), ModContent.NPCType<Leviathan>()},
+            } }, 
+            { 7533, new List<List<int>>{ // Abyss Shocker
+                    new() {NPCID.SkeletronHead},
+            } }, 
+            { 7532, new List<List<int>>{ // Abyssal Tome 
+                    new() {ModContent.NPCType<SlimeGodCore>()}
+            } }, 
+            { 7534, new List<List<int>>{ // Acid Gun
+                    new() {NPCID.EyeofCthulhu},
+                    new() {NPCID.WallofFlesh} 
+            } }, 
+            { 7840, new List<List<int>>{ // Ace's High
+                    new() {ModContent.NPCType<Yharon>()}
+            } }, 
             { 7841, new List<List<int>>() }, // Acidwood Bow
             { 7674, new List<List<int>>() }, // Acidwood Sword
-            { 7842, new List<List<int>>() }, // Adamantite Particle Accelerator
-            { 8000, new List<List<int>>() }, // Adamantite Throwing Axe
-            { 7675, new List<List<int>>() }, // Aegis Blade
-            { 8239, new List<List<int>>() }, // Aestheticus
-            { 7536, new List<List<int>>() }, // Aether's Whisper
-            { 7535, new List<List<int>>() }, // Aetherflux Cannon
-            { 7676, new List<List<int>>() }, // Air Spinner
-            { 7843, new List<List<int>>() }, // Alluvion
-            { 7537, new List<List<int>>() }, // Alpha Draconis
+            { 7842, new List<List<int>>{ // Adamantite Particle Accelerator
+                    new() {NPCID.TheDestroyer, NPCID.Retinazer, NPCID.Spazmatism},
+                    new() {NPCID.Retinazer, NPCID.Spazmatism, NPCID.SkeletronPrime},
+                    new() {NPCID.SkeletronPrime, NPCID.TheDestroyer}
+            } }, 
+            { 8000, new List<List<int>>{ // Adamantite Throwing Axe
+                    new() {NPCID.TheDestroyer, NPCID.Retinazer, NPCID.Spazmatism},
+                    new() {NPCID.Retinazer, NPCID.Spazmatism, NPCID.SkeletronPrime},
+                    new() {NPCID.SkeletronPrime, NPCID.TheDestroyer}
+            } }, 
+            { 7675, new List<List<int>>{ // Aegis Blade
+                    new() {NPCID.Golem}
+            } }, 
+            { 8239, new List<List<int>>{ // Aestheticus
+                    new() {ModContent.NPCType<HiveMind>() },
+                    new() {ModContent.NPCType<PerforatorHive>() }
+            } }, 
+            { 7536, new List<List<int>>{ // Aether's Whisper
+                    new() {ModContent.NPCType<Signus>() }
+            } }, 
+            { 7535, new List<List<int>>{ // Aetherflux Cannon
+                    new() {ModContent.NPCType<Yharon>()}
+            } }, 
+            { 7676, new List<List<int>>{ // Air Spinner
+                    new() {ModContent.NPCType<HiveMind>() },
+                    new() {ModContent.NPCType<PerforatorHive>() }
+            } }, 
+            { 7843, new List<List<int>>{ // Alluvion
+                    new() {ModContent.NPCType<DevourerofGodsHead>()}
+            } }, 
+            { 7537, new List<List<int>>{ // Alpha Draconis
+                    new() {ModContent.NPCType<Polterghast>()}
+            } }, 
             { 7538, new List<List<int>>() }, // Alula Australis
             { 7677, new List<List<int>>() }, // Amidias' Trident
             { 8142, new List<List<int>>() }, // Amphibian's Guitar
