@@ -1,11 +1,19 @@
 ﻿using CalamityMod.NPCs.AstrumAureus;
+using CalamityMod.NPCs.AstrumDeus;
+using CalamityMod.NPCs.CalClone;
+using CalamityMod.NPCs.Cryogen;
+using CalamityMod.NPCs.DesertScourge;
 using CalamityMod.NPCs.DevourerofGods;
+using CalamityMod.NPCs.ExoMechs.Apollo;
 using CalamityMod.NPCs.HiveMind;
 using CalamityMod.NPCs.Leviathan;
 using CalamityMod.NPCs.Perforator;
 using CalamityMod.NPCs.Polterghast;
+using CalamityMod.NPCs.Providence;
 using CalamityMod.NPCs.Signus;
 using CalamityMod.NPCs.SlimeGod;
+using CalamityMod.NPCs.StormWeaver;
+using CalamityMod.NPCs.SupremeCalamitas;
 using CalamityMod.NPCs.Yharon;
 using Steamworks;
 using System.Collections.Generic;
@@ -17,7 +25,7 @@ namespace CalamityWeaponChecklist
     public static class WeaponBossMappings
     {
 
-        public static readonly Dictionary<int, List<List<int>>> Mapping = new()
+         public static readonly Dictionary<int, List<List<int>>> Mapping = new()
         {
             // new List<List<int>>
             //    {
@@ -37,7 +45,7 @@ namespace CalamityWeaponChecklist
                     new() {NPCID.Plantera},
             } }, 
             { 7673, new List<List<int>>{ // Abyss Blade
-                    new() {ModContent.NPCType<Anahita>(), ModContent.NPCType<Leviathan>()},
+                    new() {ModContent.NPCType<Anahita>(), ModContent.NPCType<Leviathan>()}
             } }, 
             { 7533, new List<List<int>>{ // Abyss Shocker
                     new() {NPCID.SkeletronHead},
@@ -87,51 +95,139 @@ namespace CalamityWeaponChecklist
             { 7537, new List<List<int>>{ // Alpha Draconis
                     new() {ModContent.NPCType<Polterghast>()}
             } }, 
-            { 7538, new List<List<int>>() }, // Alula Australis
-            { 7677, new List<List<int>>() }, // Amidias' Trident
-            { 8142, new List<List<int>>() }, // Amphibian's Guitar
-            { 7539, new List<List<int>>() }, // Anahita's Arpeggio
-            { 7678, new List<List<int>>() }, // Anarchy Blade
-            { 8143, new List<List<int>>() }, // Ancient Ice Chunk
-            { 7844, new List<List<int>>() }, // Angelic Shotgun
-            { 7845, new List<List<int>>() }, // Animosity
-            { 7846, new List<List<int>>() }, // Anti-materiel Rifle
+            { 7538, new List<List<int>>{ // Alula Australis
+                    new() {ModContent.NPCType<AstrumAureus>()}
+            } }, 
+            { 7677, new List<List<int>>{ // Amidias' Trident
+                    new() {ModContent.NPCType<DesertScourgeHead>()}
+            } }, 
+            { 8142, new List<List<int>>{ // Amphibian's Guitar
+                    new() {NPCID.Plantera}
+            } }, 
+            { 7539, new List<List<int>>{ // Anahita's Arpeggio
+                    new() {ModContent.NPCType<Anahita>(), ModContent.NPCType<Leviathan>()}
+            } }, 
+            { 7678, new List<List<int>>{ // Anarchy Blade
+                    new() {NPCID.Plantera}
+            } }, 
+            { 8143, new List<List<int>>{ // Ancient Ice Chunk
+                    new() {NPCID.WallofFlesh}
+            } }, 
+            { 7844, new List<List<int>>{ // Angelic Shotgun
+                    new() {ModContent.NPCType<Providence>()}
+            } }, 
+            { 7845, new List<List<int>>{ // Animosity
+                    new() {ModContent.NPCType<CalamitasClone>()}
+            } }, 
+            { 7846, new List<List<int>>{ // Anti-materiel Rifle
+                    new() {ModContent.NPCType<DevourerofGodsHead>()}
+            } }, 
             { 8001, new List<List<int>>() }, // Antlion Skewer
-            { 7679, new List<List<int>>() }, // Aorta
-            { 7540, new List<List<int>>() }, // Apathanull
-            { 8002, new List<List<int>>() }, // Apoctolith
-            { 7541, new List<List<int>>() }, // Apoctosis Array
-            { 7542, new List<List<int>>() }, // Apotheosis
-            { 8144, new List<List<int>>() }, // Aqua's Scepter
-            { 7543, new List<List<int>>() }, // Aquamarine Staff
-            { 7847, new List<List<int>>() }, // Aquashard Shotgun
-            { 7848, new List<List<int>>() }, // Arbalest
-            { 7850, new List<List<int>>() }, // Arc Nova Diffuser
-            { 7544, new List<List<int>>() }, // Arch Amaryllis
-            { 7849, new List<List<int>>() }, // Archerfish
-            { 7545, new List<List<int>>() }, // Arctic Bear Paw
-            { 8145, new List<List<int>>() }, // Ares' Exoskeleton
-            { 7851, new List<List<int>>() }, // Arietes 41
-            { 7823, new List<List<int>>() }, // Ark of the Ancients
-            { 7680, new List<List<int>>() }, // Ark of the Cosmos
-            { 7681, new List<List<int>>() }, // Ark of the Elements
-            { 7546, new List<List<int>>() }, // Art Attack
-            { 7852, new List<List<int>>() }, // Arterial Assault
+            { 7679, new List<List<int>>{ // Aorta
+                    new() {ModContent.NPCType<PerforatorHive>()}
+            } }, 
+            { 7540, new List<List<int>>{ // Apathanull
+                    new() {NPCID.CultistBoss},
+            } }, 
+            { 8002, new List<List<int>>{ // Apoctolith
+                    new() {ModContent.NPCType<Anahita>(), ModContent.NPCType<Leviathan>()},
+            } }, 
+            { 7541, new List<List<int>>{ // Apoctosis Array
+                    new() {NPCID.CultistBoss}
+            } }, 
+            { 7542, new List<List<int>>{ // Apotheosis
+                    new() {ModContent.NPCType<SupremeCalamitas>()}
+            } }, 
+            { 8144, new List<List<int>>{ // Aqua's Scepter
+                    new() {ModContent.NPCType<StormWeaverHead>()}
+            } },
+            { 7543, new List<List<int>>{ // Aquamarine Staff
+                    new() {ModContent.NPCType<DesertScourgeHead>()}
+            } }, 
+            { 7847, new List<List<int>>{ // Aquashard Shotgun
+                    new() {ModContent.NPCType<HiveMind>()},
+                    new() {ModContent.NPCType<PerforatorHive>()}
+            } }, 
+            { 7848, new List<List<int>>{ // Arbalest
+                    new() {NPCID.Spazmatism, NPCID.Retinazer, NPCID.TheDestroyer},
+                    new() {NPCID.Spazmatism, NPCID.Retinazer, NPCID.SkeletronPrime}
+            } }, 
+            { 7850, new List<List<int>>{ // Arc Nova Diffuser
+                    new() {ModContent.NPCType<CalamitasClone>()}
+            } }, 
+            { 7544, new List<List<int>>{ // Arch Amaryllis
+                    new() {NPCID.CultistBoss}
+            } }, 
+            { 7849, new List<List<int>>{ // Archerfish
+                    new() {NPCID.SkeletronHead}
+            } }, 
+            { 7545, new List<List<int>>{ // Arctic Bear Paw
+                    new() {NPCID.Spazmatism, NPCID.Retinazer, NPCID.TheDestroyer, NPCID.SkeletronPrime}
+            } }, 
+            { 8145, new List<List<int>>{ // Ares' Exoskeleton
+                    new() {ModContent.NPCType<Apollo>()}
+            } },
+            { 7851, new List<List<int>>{ // Arietes 41
+                    new() {NPCID.Plantera}
+            } }, 
+            { 7823, new List<List<int>>{ // Ark of the Ancients
+                    new() {NPCID.Plantera}
+            } }, 
+            { 7680, new List<List<int>>{ // Ark of the Cosmos
+                    new() {ModContent.NPCType<Yharon>()}
+            } }, 
+            { 7681, new List<List<int>>{ // Ark of the Elements
+                    new() {NPCID.MoonLordCore}
+            } }, 
+            { 7546, new List<List<int>>{ // Art Attack
+                    new() {ModContent.NPCType<CalamitasClone>()}
+            } }, 
+            { 7852, new List<List<int>>{ // Arterial Assault
+                    new() {ModContent.NPCType<Providence>()},
+            } }, 
             { 8003, new List<List<int>>() }, // Ashen Stalactite
-            { 7853, new List<List<int>>() }, // Astral Blaster
-            { 7682, new List<List<int>>() }, // Astral Pike
-            { 7683, new List<List<int>>() }, // Astral Scythe
-            { 7548, new List<List<int>>() }, // Astral Staff
-            { 7547, new List<List<int>>() }, // Astralachnea Staff
-            { 7854, new List<List<int>>() }, // Astreal Defeat
-            { 7684, new List<List<int>>() }, // Ataraxia
-            { 7549, new List<List<int>>() }, // Atlantis
-            { 8146, new List<List<int>>() }, // Atlas Munitions Beacon
-            { 7550, new List<List<int>>() }, // Augur of the Void
-            { 7855, new List<List<int>>() }, // Auralis
-            { 7856, new List<List<int>>() }, // Aurora Blazer
-            { 8004, new List<List<int>>() }, // Auroradical Throw
-            { 7685, new List<List<int>>() }, // Avalanche
+            { 7853, new List<List<int>>{ // Astral Blaster
+                    new() {ModContent.NPCType<AstrumDeusHead>(), NPCID.CultistBoss}
+            } }, 
+            { 7682, new List<List<int>>{ // Astral Pike
+                    new() {ModContent.NPCType<AstrumDeusHead>(), NPCID.CultistBoss}
+            } }, 
+            { 7683, new List<List<int>>{ // Astral Scythe
+                    new() {ModContent.NPCType<AstrumAureus>()}
+            } }, 
+            { 7548, new List<List<int>>{ // Astral Staff
+                    new() {ModContent.NPCType<AstrumDeusHead>(), NPCID.CultistBoss}
+            } }, 
+            { 7547, new List<List<int>>{ // Astralachnea Staff
+                    new() {ModContent.NPCType<AstrumAureus>()}
+            } }, 
+            { 7854, new List<List<int>>{ // Astreal Defeat
+                    new() {NPCID.MoonLordCore}
+            } }, 
+            { 7684, new List<List<int>>{ // Ataraxia
+                    new() {ModContent.NPCType<Yharon>()}
+            } }, 
+            { 7549, new List<List<int>>{ // Atlantis
+                    new() {ModContent.NPCType<Anahita>(), ModContent.NPCType<Leviathan>()}
+            } }, 
+            { 8146, new List<List<int>>{ // Atlas Munitions Beacon
+                    new() {ModContent.NPCType<Apollo>()}
+            } }, 
+            { 7550, new List<List<int>>{ // Augur of the Void
+                    new() {NPCID.MoonLordCore}
+            } }, 
+            { 7855, new List<List<int>>{ // Auralis
+                    new() {ModContent.NPCType<Providence>()}
+            } }, 
+            { 7856, new List<List<int>>{ // Aurora Blazer
+                    new() {ModContent.NPCType<AstrumAureus>()}
+            } }, 
+            { 8004, new List<List<int>>{ // Auroradical Throw
+                    new() {ModContent.NPCType<AstrumAureus>()}
+            } }, 
+            { 7685, new List<List<int>>{ // Avalanche
+                    new() {ModContent.NPCType<Cryogen>()}
+            } }, 
             { 7514, new List<List<int>>() }, // B-GSS: Nidhogg
             { 7509, new List<List<int>>() }, // B-LSR: Countermeasure Mitt
             { 7686, new List<List<int>>() }, // Baleful Harvester
