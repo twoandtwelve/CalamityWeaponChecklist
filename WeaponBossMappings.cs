@@ -646,37 +646,97 @@ namespace CalamityWeaponChecklist
             { "DynamicPursuer", new List<List<int>>{ // Dynamic Pursuer
                     new() {ModContent.NPCType<Yharon>()}
             } }, 
-            { "Earth", new List<List<int>>() }, // Earth
-            { "EarthenPike", new List<List<int>>() }, // Earthen Pike
-            { "EclipsesFall", new List<List<int>>() }, // Eclipse's Fall
-            { "Effervescence", new List<List<int>>() }, // Effervescence
-            { "EidolicWail", new List<List<int>>() }, // Eidolic Wail
-            { "EidolonStaff", new List<List<int>>() }, // Eidolon Staff
-            { "EldritchTome", new List<List<int>>() }, // Eldritch Tome
-            { "EmpyreanKnives", new List<List<int>>() }, // Empyrean Knives
-            { "EnchantedAxe", new List<List<int>>() }, // Enchanted Axe
-            { "EnchantedConch", new List<List<int>>() }, // Enchanted Conch
+            { "Earth", new List<List<int>>{ // Earth
+                    new() {ModContent.NPCType<SupremeCalamitas>()}
+            } }, 
+            { "EarthenPike", new List<List<int>>{ // Earthen Pike
+                    new() {NPCID.WallofFlesh}
+            } }, 
+            { "EclipsesFall", new List<List<int>>{ // Eclipse's Fall
+                    new() {ModContent.NPCType<DevourerofGodsHead>()}
+            } }, 
+            { "Effervescence", new List<List<int>>{ // Effervescence
+                    new() {NPCID.MoonLordCore}
+            } }, 
+            { "EidolicWail", new List<List<int>>{ // Eidolic Wail
+                    new() {ModContent.NPCType<Polterghast>()}
+            } }, 
+            { "EidolonStaff", new List<List<int>>{ // Eidolon Staff
+                    new() {ModContent.NPCType<Polterghast>()}
+            } }, 
+            { "EldritchTome", new List<List<int>>{ // Eldritch Tome
+                    new() {ModContent.NPCType<SlimeGodCore>()}
+            } }, 
+            { "EmpyreanKnives", new List<List<int>>{ // Empyrean Knives
+                    new() {ModContent.NPCType<Signus>()}
+            } }, 
+            { "EnchantedAxe", new List<List<int>>{ // Enchanted Axe
+                    new() {NPCID.SkeletronHead}
+            } }, 
+            { "EnchantedConch", new List<List<int>>{ // Enchanted Conch
+                    new() {ModContent.NPCType<DesertScourgeHead>()}
+            } }, 
             { "EnchantedKnifeStaff", new List<List<int>>() }, // Enchanted Knife Staff
-            { "EndoHydraStaff", new List<List<int>>() }, // Endo Hydra Staff
-            { "Endogenesis", new List<List<int>>() }, // Endogenesis
-            { "EntropicClaymore", new List<List<int>>() }, // Entropic Claymore
-            { "EntropysVigil", new List<List<int>>() }, // Entropy's Vigil
-            { "EpidemicShredder", new List<List<int>>() }, // Epidemic Shredder
-            { "Equanimity", new List<List<int>>() }, // Equanimity
-            { "EssenceFlayer", new List<List<int>>() }, // Essence Flayer
-            { "EternalBlizzard", new List<List<int>>() }, // Eternal Blizzard
-            { "Eternity", new List<List<int>>() }, // Eternity
-            { "EtherealSubjugator", new List<List<int>>() }, // Ethereal Subjugator
-            { "EventHorizon", new List<List<int>>() }, // Event Horizon
-            { "EvergladeSpray", new List<List<int>>() }, // Everglade Spray
-            { "EvilSmasher", new List<List<int>>() }, // Evil Smasher
-            { "Eviscerator", new List<List<int>>() }, // Eviscerator
-            { "ExaltedOathblade", new List<List<int>>() }, // Exalted Oathblade
-            { "ExecutionersBlade", new List<List<int>>() }, // Executioner's Blade
-            { "Exoblade", new List<List<int>>() }, // Exoblade
-            { "Exorcism", new List<List<int>>() }, // Exorcism
-            { "EyeofMagnus", new List<List<int>>() }, // Eye of Magnus
-            { "EyeOfNight", new List<List<int>>() }, // Eye of Night
+            { "EndoHydraStaff", new List<List<int>>{ // Endo Hydra Staff
+                    new() {ModContent.NPCType<DevourerofGodsHead>()}
+            } }, 
+            { "Endogenesis", new List<List<int>>{ // Endogenesis
+                    new() {ModContent.NPCType<SupremeCalamitas>()}
+            } }, 
+            { "EntropicClaymore", new List<List<int>>{ // Entropic Claymore
+                    new() {NPCID.CultistBoss}
+            } }, 
+            { "EntropysVigil", new List<List<int>>{ // Entropy's Vigil
+                    new() {ModContent.NPCType<CalamitasClone>()}
+            } }, 
+            { "EpidemicShredder", new List<List<int>>{ // Epidemic Shredder
+                    new() {NPCID.Golem}
+            } }, 
+            { "Equanimity", new List<List<int>>{ // Equanimity
+                    new() {NPCID.WallofFlesh}
+            } }, 
+            { "EssenceFlayer", new List<List<int>>{ // Essence Flayer
+                    new() {ModContent.NPCType<DevourerofGodsHead>()}
+            } }, 
+            { "EternalBlizzard", new List<List<int>>{ // Eternal Blizzard
+                    new() {NPCID.Plantera}
+            } }, 
+            { "Eternity", new List<List<int>>{ // Eternity
+                    new() {ModContent.NPCType<SupremeCalamitas>()}
+            } }, 
+            { "EtherealSubjugator", new List<List<int>>{ // Ethereal Subjugator
+                    new() {ModContent.NPCType<Polterghast>()}
+            } }, 
+            { "EventHorizon", new List<List<int>>{ // Event Horizon
+                    new() {ModContent.NPCType<CeaselessVoid>()}
+            } }, 
+            { "EvergladeSpray", new List<List<int>>{ // Everglade Spray
+                    new() {NPCID.Plantera}
+            } }, 
+            { "EvilSmasher", new List<List<int>>{ // Evil Smasher
+                    new() {NPCID.WallofFlesh}
+            } }, 
+            { "Eviscerator", new List<List<int>>{ // Eviscerator
+                    new() {ModContent.NPCType<PerforatorHive>()}
+            } }, 
+            { "ExaltedOathblade", new List<List<int>>{ // Exalted Oathblade
+                    new() {NPCID.Golem}
+            } }, 
+            { "ExecutionersBlade", new List<List<int>>{ // Executioner's Blade
+                    new() {ModContent.NPCType<DevourerofGodsHead>()}
+            } }, 
+            { "Exoblade", new List<List<int>>{ // Exoblade
+                    new() {ModContent.NPCType<Apollo>()}
+            } }, 
+            { "Exorcism", new List<List<int>>{ // Exorcism
+                    new() {NPCID.Spazmatism, NPCID.Retinazer, NPCID.TheDestroyer, NPCID.SkeletronPrime}
+            } }, 
+            { "EyeofMagnus", new List<List<int>>{ // Eye of Magnus
+                    new() {NPCID.CultistBoss}
+            } }, 
+            { "EyeOfNight", new List<List<int>>{ // Eye of Night
+                    new() {ModContent.NPCType<SlimeGodCore>()}
+            } }, 
             { "FaceMelter", new List<List<int>>() }, // Face Melter
             { "FallenPaladinsHammer", new List<List<int>>() }, // Fallen Paladin's Hammer
             { "FantasyTalisman", new List<List<int>>() }, // Fantasy Talisman
