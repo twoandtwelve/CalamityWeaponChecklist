@@ -1,6 +1,7 @@
 ﻿using CalamityMod.NPCs.AquaticScourge;
 using CalamityMod.NPCs.AstrumAureus;
 using CalamityMod.NPCs.AstrumDeus;
+using CalamityMod.NPCs.BrimstoneElemental;
 using CalamityMod.NPCs.CalClone;
 using CalamityMod.NPCs.Cryogen;
 using CalamityMod.NPCs.DesertScourge;
@@ -253,45 +254,118 @@ namespace CalamityWeaponChecklist
                     new() {NPCID.EyeofCthulhu},
                     new() {NPCID.WallofFlesh}
             } },
-            { "BelchingSaxophone", new List<List<int>>() }, // Belching Saxophone
+            { "BelchingSaxophone", new List<List<int>>{ // Belching Saxophone
+                    new() {ModContent.NPCType<AquaticScourgeHead>()}
+            } }, 
             { "BelladonnaSpiritStaff", new List<List<int>>() }, // Belladonna Spirit Staff
-            { "Biofusillade", new List<List<int>>() }, // Biofusillade
-            { "TrueBiomeBlade", new List<List<int>>() }, // Biome Blade
-            { "BlackAnurian", new List<List<int>>() }, // Black Anurian
-            { "BlackHawkRemote", new List<List<int>>() }, // Black Hawk Remote
+            { "Biofusillade", new List<List<int>>{ // Biofusillade
+                    new() {ModContent.NPCType<Providence>()}
+            } }, 
+            { "TrueBiomeBlade", new List<List<int>>{ // Biome Blade
+                    new() {NPCID.Spazmatism, NPCID.Retinazer, NPCID.TheDestroyer, NPCID.SkeletronPrime}
+            } }, 
+            { "BlackAnurian", new List<List<int>>{ // Black Anurian
+                    new() {NPCID.SkeletronHead}
+            } }, 
+            { "BlackHawkRemote", new List<List<int>>{ // Black Hawk Remote
+                    new() {NPCID.WallofFlesh}
+            } }, 
             { "BladecrestOathsword", new List<List<int>>() }, // Bladecrest Oathsword
-            { "BladedgeRailbow", new List<List<int>>() }, // Bladedge Railbow
-            { "BlastBarrel", new List<List<int>>() }, // Blast Barrel
-            { "BlazingStar", new List<List<int>>() }, // Blazing Star
-            { "BlightSpewer", new List<List<int>>() }, // Blight Spewer
-            { "BlightedCleaver", new List<List<int>>() }, // Blighted Cleaver
-            { "BlissfulBombardier", new List<List<int>>() }, // Blissful Bombardier
-            { "BloodBath", new List<List<int>>() }, // Blood Bath
-            { "BloodBoiler", new List<List<int>>() }, // Blood Boiler
-            { "BloodsoakedCrasher", new List<List<int>>() }, // Bloodsoaked Crasher
-            { "BlossomFlux", new List<List<int>>() }, // Blossom Flux
-            { "Bonebreaker", new List<List<int>>() }, // Bonebreaker
-            { "BorealisBomber", new List<List<int>>() }, // Borealis Bomber
-            { "BotanicPiercer", new List<List<int>>() }, // Botanic Piercer
+            { "BladedgeRailbow", new List<List<int>>{ // Bladedge Railbow
+                    new() {NPCID.Plantera}
+            } }, 
+            { "BlastBarrel", new List<List<int>>{ // Blast Barrel
+                    new() {NPCID.WallofFlesh}
+            } }, 
+            { "BlazingStar", new List<List<int>>{ // Blazing Star
+                    new() {NPCID.Spazmatism, NPCID.Retinazer},
+                    new() {NPCID.TheDestroyer},
+                    new() {NPCID.SkeletronPrime}
+            } }, 
+            { "BlightSpewer", new List<List<int>>{ // Blight Spewer
+                    new() {ModContent.NPCType<PlaguebringerGoliath>()}
+            } }, 
+            { "BlightedCleaver", new List<List<int>>{ // Blighted Cleaver
+                    new() {NPCID.Plantera}
+            } }, 
+            { "BlissfulBombardier", new List<List<int>>{ // Blissful Bombardier
+                    new() {ModContent.NPCType<Providence>()}
+            } }, 
+            { "BloodBath", new List<List<int>>{ // Blood Bath
+                    new() {ModContent.NPCType<PerforatorHive>()}
+            } }, 
+            { "BloodBoiler", new List<List<int>>{ // Blood Boiler
+                    new() {ModContent.NPCType<Providence>()}
+            } }, 
+            { "BloodsoakedCrasher", new List<List<int>>{ // Bloodsoaked Crasher
+                    new() {ModContent.NPCType<Providence>()}
+            } }, 
+            { "BlossomFlux", new List<List<int>>{ // Blossom Flux
+                    new() {NPCID.Plantera}
+            } }, 
+            { "Bonebreaker", new List<List<int>>{ // Bonebreaker
+                    new() {ModContent.NPCType<AquaticScourgeHead>()}
+            } }, 
+            { "BorealisBomber", new List<List<int>>{ // Borealis Bomber
+                    new() {ModContent.NPCType<AstrumAureus>()}
+            } }, 
+            { "BotanicPiercer", new List<List<int>>{ // Botanic Piercer
+                    new() {NPCID.Plantera}
+            } }, 
             { "BouncingEyeball", new List<List<int>>() }, // Bouncing Eyeball
-            { "Brimblade", new List<List<int>>() }, // Brimblade
-            { "Brimlance", new List<List<int>>() }, // Brimlance
-            { "Brimlash", new List<List<int>>() }, // Brimlash
-            { "BrimroseStaff", new List<List<int>>() }, // Brimrose Staff
-            { "BrimstoneFury", new List<List<int>>() }, // Brimstone Fury
-            { "BrimstoneSword", new List<List<int>>() }, // Brimstone Sword
-            { "BrinyBaron", new List<List<int>>() }, // Briny Baron
-            { "BrittleStarStaff", new List<List<int>>() }, // Brittle Star Staff
+            { "Brimblade", new List<List<int>>{ // Brimblade
+                    new() {NPCID.Spazmatism, NPCID.Retinazer},
+                    new() {NPCID.TheDestroyer},
+                    new() {NPCID.SkeletronPrime}
+            } }, 
+            { "Brimlance", new List<List<int>>{ // Brimlance
+                    new() {ModContent.NPCType<BrimstoneElemental>()}
+            } }, 
+            { "Brimlash", new List<List<int>>{ // Brimlash
+                    new() {ModContent.NPCType<CalamitasClone>()}
+            } }, 
+            { "BrimroseStaff", new List<List<int>>{ // Brimrose Staff
+                    new() {NPCID.Spazmatism, NPCID.Retinazer},
+                    new() {NPCID.TheDestroyer},
+                    new() {NPCID.SkeletronPrime}
+            } }, 
+            { "BrimstoneFury", new List<List<int>>{ // Brimstone Fury
+                    new() {NPCID.Spazmatism, NPCID.Retinazer},
+                    new() {NPCID.TheDestroyer},
+                    new() {NPCID.SkeletronPrime}
+            } }, 
+            { "BrimstoneSword", new List<List<int>>{ // Brimstone Sword
+                    new() {NPCID.Spazmatism, NPCID.Retinazer},
+                    new() {NPCID.TheDestroyer},
+                    new() {NPCID.SkeletronPrime}    
+            } }, 
+            { "BrinyBaron", new List<List<int>>{ // Briny Baron
+                    new() {NPCID.DukeFishron}
+            } }, 
+            { "BrittleStarStaff", new List<List<int>>{ // Brittle Star Staff
+                    new() {ModContent.NPCType<DesertScourgeHead>()}
+            } }, 
             { "BrokenBiomeBlade", new List<List<int>>{ // Broken Biome Blade
-                    new() {ModContent.NPCType<HiveMind>() },
-                    new() {ModContent.NPCType<PerforatorHive>() }
+                    new() {ModContent.NPCType<HiveMind>()},
+                    new() {ModContent.NPCType<PerforatorHive>()}
             } },
-            { "BulletFilledShotgun", new List<List<int>>() }, // Bullet-Filled Shotgun
-            { "BurningRevelation", new List<List<int>>() }, // Burning Revelation
-            { "BurningSea", new List<List<int>>() }, // Burning Sea
+            { "BulletFilledShotgun", new List<List<int>>{ // Bullet-Filled Shotgun
+                    new() {ModContent.NPCType<HiveMind>()},
+                    new() {ModContent.NPCType<PerforatorHive>()}
+            } }, 
+            { "BurningRevelation", new List<List<int>>{ // Burning Revelation
+                    new() {ModContent.NPCType<Providence>()}
+            } }, 
+            { "BurningSea", new List<List<int>>{ // Burning Sea
+                    new() {NPCID.Spazmatism, NPCID.Retinazer},
+                    new() {NPCID.TheDestroyer},
+                    new() {NPCID.SkeletronPrime}
+            } }, 
             { "BurningStrife", new List<List<int>>() }, // Burning Strife
             { "BurntSienna", new List<List<int>>() }, // Burnt Sienna
-            { "Buzzkill", new List<List<int>>() }, // Buzzkill
+            { "Buzzkill", new List<List<int>>{ // Buzzkill
+                    new() {NPCID.SkeletronPrime}
+            } }, 
             { "CadaverousCarrion", new List<List<int>>() }, // Cadaverous Carrion
             { "CalamarisLament", new List<List<int>>() }, // Calamari's Lament
             { "Carnage", new List<List<int>>() }, // Carnage
