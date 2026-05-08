@@ -15,43 +15,28 @@ namespace CalamityWeaponChecklist
 
         public override void Action(CommandCaller caller, string input, string[] args)
         {
-            // This is usually: Documents/My Games/Terraria/tModLoader
             string path = Path.Combine(Main.SavePath, "BossList.txt");
-
-            List<string> lines = new List<string>();
+            List<string> lines = new();
 
             foreach (var kvp in ContentSamples.NpcsByNetId)
             {
-                int type = kvp.Key;
                 NPC npc = kvp.Value;
+                if (npc == null) continue;
 
-                if (npc == null)
-                    continue;
-
-                bool isBoss = false;
-
-                // 1) Direct boss flag (works for vanilla + most modded bosses)
-                if (npc.boss)
-                    isBoss = true;
-
-                // 2) Vanilla helper flag (ONLY safe for vanilla IDs)
-                if (!isBoss && type >= 0 && type < NPCID.Sets.ShouldBeCountedAsBoss.Length)
-                {
-                    if (NPCID.Sets.ShouldBeCountedAsBoss[type])
-                        isBoss = true;
-                }
+                bool isBoss =
+                    npc.boss ||
+                    (kvp.Key >= 0 &&
+                     kvp.Key < NPCID.Sets.ShouldBeCountedAsBoss.Length &&
+                     NPCID.Sets.ShouldBeCountedAsBoss[kvp.Key]);
 
                 if (!isBoss)
                     continue;
 
                 string modName = npc.ModNPC?.Mod?.Name ?? "Terraria";
-                string name = npc.FullName; // NPC's display name
-
-                lines.Add($"{type}: {modName}/{name}");
+                lines.Add($"{kvp.Key}: {modName}/{npc.FullName}");
             }
 
             File.WriteAllLines(path, lines);
-
             Main.NewText($"Boss list written to: {path}");
         }
     }

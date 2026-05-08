@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Terraria;
@@ -26,43 +25,26 @@ namespace CalamityWeaponChecklist
             }
 
             string path = Path.Combine(Main.SavePath, "KilledBossesDump.txt");
-
             List<string> lines = new();
 
-            lines.Add("=== KILLED BOSSES ===");
-            lines.Add("");
+            lines.Add("=== KILLED BOSSES ===\n");
 
             foreach (int bossType in killed.OrderBy(x => x))
             {
-                string name = GetBossNameFromNPC(bossType);
-                string mod = GetModName(bossType);
+                string name = "Unknown Boss";
+                string mod = "UnknownMod";
+
+                if (ContentSamples.NpcsByNetId.TryGetValue(bossType, out NPC npc) && npc != null)
+                {
+                    name = npc.FullName;
+                    mod = npc.ModNPC?.Mod?.Name ?? "Terraria";
+                }
 
                 lines.Add($"{bossType}: {mod}/{name}");
             }
 
             File.WriteAllLines(path, lines);
-
             Main.NewText($"Killed bosses dumped to: {path}");
-        }
-
-        private string GetBossNameFromNPC(int type)
-        {
-            if (ContentSamples.NpcsByNetId.TryGetValue(type, out NPC npc) && npc != null)
-            {
-                return npc.FullName;
-            }
-
-            return "Unknown Boss";
-        }
-
-        private string GetModName(int type)
-        {
-            if (ContentSamples.NpcsByNetId.TryGetValue(type, out NPC npc) && npc != null)
-            {
-                return npc.ModNPC?.Mod?.Name ?? "Terraria";
-            }
-
-            return "UnknownMod";
         }
     }
 }

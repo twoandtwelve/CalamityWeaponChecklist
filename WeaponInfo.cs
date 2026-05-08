@@ -1,23 +1,25 @@
 ﻿using System.Collections.Generic;
-using Terraria;
 
 namespace CalamityWeaponChecklist
 {
     public class WeaponInfo
     {
         public int Type { get; }
+
+        public string InternalName { get; }
+
         public string Name { get; }
         public string Category { get; }
 
         public List<List<int>> DependentBosses { get; set; }
 
-        public WeaponInfo(int type, string name, string category)
+        public WeaponInfo(int type, string internalName, string name, string category)
         {
             Type = type;
+            InternalName = internalName;
             Name = name;
             Category = category;
 
-            // default = no dependency / pre-boss
             DependentBosses = new List<List<int>>
             {
                 new List<int> { -1 }
@@ -26,7 +28,7 @@ namespace CalamityWeaponChecklist
 
         public override string ToString()
         {
-            return $"{Name} ({Category}) - Type {Type}, Bosses: {FormatBosses()}";
+            return $"{Name} ({InternalName}) ({Category}) - Type {Type}, Bosses: {FormatBosses()}";
         }
 
         private string FormatBosses()
