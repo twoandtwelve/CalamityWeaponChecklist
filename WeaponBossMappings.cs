@@ -1,4 +1,5 @@
-﻿using CalamityMod.NPCs.AstrumAureus;
+﻿using CalamityMod.NPCs.AquaticScourge;
+using CalamityMod.NPCs.AstrumAureus;
 using CalamityMod.NPCs.AstrumDeus;
 using CalamityMod.NPCs.CalClone;
 using CalamityMod.NPCs.Cryogen;
@@ -8,6 +9,7 @@ using CalamityMod.NPCs.ExoMechs.Apollo;
 using CalamityMod.NPCs.HiveMind;
 using CalamityMod.NPCs.Leviathan;
 using CalamityMod.NPCs.Perforator;
+using CalamityMod.NPCs.PlaguebringerGoliath;
 using CalamityMod.NPCs.Polterghast;
 using CalamityMod.NPCs.Providence;
 using CalamityMod.NPCs.Signus;
@@ -25,7 +27,7 @@ namespace CalamityWeaponChecklist
     public static class WeaponBossMappings
     {
 
-         public static readonly Dictionary<int, List<List<int>>> Mapping = new()
+        public static readonly Dictionary<int, List<List<int>>> Mapping = new()
         {
             // new List<List<int>>
             //    {
@@ -228,16 +230,37 @@ namespace CalamityWeaponChecklist
             { 7685, new List<List<int>>{ // Avalanche
                     new() {ModContent.NPCType<Cryogen>()}
             } }, 
-            { 7514, new List<List<int>>() }, // B-GSS: Nidhogg
-            { 7509, new List<List<int>>() }, // B-LSR: Countermeasure Mitt
-            { 7686, new List<List<int>>() }, // Baleful Harvester
-            { 7687, new List<List<int>>() }, // Ball O' Fugu
-            { 8005, new List<List<int>>() }, // Ballistic Poison Bomb
-            { 7688, new List<List<int>>() }, // Banshee Hook
-            { 7857, new List<List<int>>() }, // Barinade
-            { 7858, new List<List<int>>() }, // Barinautical
-            { 7859, new List<List<int>>() }, // Barracuda Gun
-            { 7689, new List<List<int>>() }, // Basher
+            { 7514, new List<List<int>>{ // B-GSS: Nidhogg
+                    new() {ModContent.NPCType<PlaguebringerGoliath>()}
+            } }, 
+            { 7509, new List<List<int>>{ // B-LSR: Countermeasure Mitt
+                    new() {ModContent.NPCType<PlaguebringerGoliath>()}
+            } },
+            { 7686, new List<List<int>>{ // Baleful Harvester
+                    new() {NPCID.CultistBoss}
+            } }, 
+            { 7687, new List<List<int>>{ // Ball O' Fugu
+                    new() {NPCID.SkeletronHead}
+            } }, 
+            { 8005, new List<List<int>>{ // Ballistic Poison Bomb
+                    new() {ModContent.NPCType<Anahita>(), ModContent.NPCType<Leviathan>()}
+            } }, 
+            { 7688, new List<List<int>>{ // Banshee Hook
+                    new() {ModContent.NPCType<Polterghast>()}
+            } }, 
+            { 7857, new List<List<int>>{ // Barinade
+                    new() {ModContent.NPCType<DesertScourgeHead>()}
+            } }, 
+            { 7858, new List<List<int>>{ // Barinautical
+                    new() {ModContent.NPCType<AquaticScourgeHead>()}
+            } }, 
+            { 7859, new List<List<int>>{ // Barracuda Gun
+                    new() {NPCID.MoonLordCore}
+            } }, 
+            { 7689, new List<List<int>>{ // Basher
+                    new() {NPCID.EyeofCthulhu},
+                    new() {NPCID.WallofFlesh}
+            } }, 
             { 7551, new List<List<int>>() }, // Belching Saxophone
             { 8147, new List<List<int>>() }, // Belladonna Spirit Staff
             { 7552, new List<List<int>>() }, // Biofusillade
