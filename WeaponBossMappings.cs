@@ -4,6 +4,7 @@ using CalamityMod.NPCs.AstrumDeus;
 using CalamityMod.NPCs.BrimstoneElemental;
 using CalamityMod.NPCs.CalClone;
 using CalamityMod.NPCs.CeaselessVoid;
+using CalamityMod.NPCs.Crabulon;
 using CalamityMod.NPCs.Cryogen;
 using CalamityMod.NPCs.DesertScourge;
 using CalamityMod.NPCs.DevourerofGods;
@@ -25,6 +26,7 @@ using Steamworks;
 using System.Collections.Generic;
 using Terraria.ID;
 using Terraria.ModLoader;
+
 
 namespace CalamityWeaponChecklist
 {
@@ -737,74 +739,215 @@ namespace CalamityWeaponChecklist
             { "EyeOfNight", new List<List<int>>{ // Eye of Night
                     new() {ModContent.NPCType<SlimeGodCore>()}
             } }, 
-            { "FaceMelter", new List<List<int>>() }, // Face Melter
-            { "FallenPaladinsHammer", new List<List<int>>() }, // Fallen Paladin's Hammer
-            { "FantasyTalisman", new List<List<int>>() }, // Fantasy Talisman
-            { "FatesReveal", new List<List<int>>() }, // Fate's Reveal
-            { "FaultLine", new List<List<int>>() }, // Fault Line
-            { "FeatherKnife", new List<List<int>>() }, // Feather Knife
-            { "FeralthornClaymore", new List<List<int>>() }, // Feralthorn Claymore
-            { "FetidEmesis", new List<List<int>>() }, // Fetid Emesis
-            { "FirestormCannon", new List<List<int>>() }, // Firestorm Cannon
-            { "FishboneBoomerang", new List<List<int>>() }, // Fishbone Boomerang
-            { "FlakKraken", new List<List<int>>() }, // Flak Kraken
-            { "FlakToxicannon", new List<List<int>>() }, // Flak Toxicannon
-            { "FlamsteedRing", new List<List<int>>() }, // Flamsteed Ring
-            { "FlareBolt", new List<List<int>>() }, // Flare Bolt
-            { "FlarefrostBlade", new List<List<int>>() }, // Flarefrost Blade
-            { "FlarewingBow", new List<List<int>>() }, // Flarewing Bow
-            { "FleshOfInfidelity", new List<List<int>>() }, // Flesh of Infidelity
-            { "Floodtide", new List<List<int>>() }, // Floodtide
-            { "FlowersOfMortality", new List<List<int>>() }, // Flowers of Mortality
-            { "FlurrystormCannon", new List<List<int>>() }, // Flurrystorm Cannon
-            { "ForbiddenOathblade", new List<List<int>>() }, // Forbidden Oathblade
-            { "ForbiddenSun", new List<List<int>>() }, // Forbidden Sun
-            { "ForgottenApexWand", new List<List<int>>() }, // Forgotten Apex Wand
-            { "ForsakenSaber", new List<List<int>>() }, // Forsaken Saber
-            { "FracturedArk", new List<List<int>>() }, // Fractured Ark
-            { "FreedomStar", new List<List<int>>() }, // Freedom Star
-            { "FrigidflashBolt", new List<List<int>>() }, // Frigidflash Bolt
+            { "FaceMelter", new List<List<int>>{ // Face Melter
+                    new() {ModContent.NPCType<DevourerofGodsHead>()}
+            } }, 
+            { "FallenPaladinsHammer", new List<List<int>>{ // Fallen Paladin's Hammer
+                    new() {NPCID.Golem}
+            } }, 
+            { "FantasyTalisman", new List<List<int>>{ // Fantasy Talisman
+                    new() {NPCID.Plantera}
+            } }, 
+            { "FatesReveal", new List<List<int>>{ // Fate's Reveal
+                    new() {ModContent.NPCType<Polterghast>()}
+            } }, 
+            { "FaultLine", new List<List<int>>{ // Fault Line
+                    new() {NPCID.Golem}
+            } }, 
+            { "FeatherKnife", new List<List<int>>{ // Feather Knife
+                    new() {ModContent.NPCType<PerforatorHive>()},
+                    new() {ModContent.NPCType<HiveMind>()}
+            } }, 
+            { "FeralthornClaymore", new List<List<int>>{ // Feralthorn Claymore
+                    new() {NPCID.Plantera}
+            } }, 
+            { "FetidEmesis", new List<List<int>>{ // Fetid Emesis
+                    new() {ModContent.NPCType<OldDuke>()}
+            } }, 
+            { "FirestormCannon", new List<List<int>>{ // Firestorm Cannon
+                    new() {NPCID.BrainofCthulhu},
+                    new() {NPCID.EaterofWorldsHead}
+            } }, 
+            { "FishboneBoomerang", new List<List<int>>{ // Fishbone Boomerang
+                    new() {ModContent.NPCType<DesertScourgeHead>()}
+            } }, 
+            { "FlakKraken", new List<List<int>>{ // Flak Kraken
+                    new() {ModContent.NPCType<Anahita>(), ModContent.NPCType<Leviathan>()}
+            } }, 
+            { "FlakToxicannon", new List<List<int>>{ // Flak Toxicannon
+                    new() {ModContent.NPCType<AquaticScourgeHead>()}
+            } }, 
+            { "FlamsteedRing", new List<List<int>>{ // Flamsteed Ring
+                    new() {ModContent.NPCType<SupremeCalamitas>()}
+            } }, 
+            { "FlareBolt", new List<List<int>>{ // Flare Bolt
+                    new() {NPCID.BrainofCthulhu},
+                    new() {NPCID.EaterofWorldsHead}
+            } }, 
+            { "FlarefrostBlade", new List<List<int>>{ // Flarefrost Blade
+                    new() {ModContent.NPCType<Cryogen>(), NPCID.Spazmatism, NPCID.Retinazer, NPCID.TheDestroyer},
+                    new() {ModContent.NPCType<Cryogen>(), NPCID.Spazmatism, NPCID.Retinazer, NPCID.SkeletronPrime},
+                    new() {ModContent.NPCType<Cryogen>(), NPCID.SkeletronPrime, NPCID.TheDestroyer}
+            } }, 
+            { "FlarewingBow", new List<List<int>>{ // Flarewing Bow
+                    new() {NPCID.WallofFlesh}
+            } }, 
+            { "FleshOfInfidelity", new List<List<int>>{ // Flesh of Infidelity
+                    new() {ModContent.NPCType<PerforatorHive>()}
+            } }, 
+            { "Floodtide", new List<List<int>>{ // Floodtide
+                    new() {ModContent.NPCType<Anahita>(), ModContent.NPCType<Leviathan>()}
+            } }, 
+            { "FlowersOfMortality", new List<List<int>>{ // Flowers of Mortality
+                    new() {NPCID.MoonLordCore}
+            } }, 
+            { "FlurrystormCannon", new List<List<int>>{ // Flurrystorm Cannon
+                    new() {NPCID.SkeletronHead}
+            } }, 
+            { "ForbiddenOathblade", new List<List<int>>{ // Forbidden Oathblade
+                    new() {NPCID.Spazmatism, NPCID.Retinazer},
+                    new() {NPCID.TheDestroyer},
+                    new() {NPCID.SkeletronPrime}
+            } }, 
+            { "ForbiddenSun", new List<List<int>>{ // Forbidden Sun
+                    new() {NPCID.Golem}
+            } }, 
+            { "ForgottenApexWand", new List<List<int>>{ // Forgotten Apex Wand
+                    new() {NPCID.Spazmatism, NPCID.Retinazer, NPCID.TheDestroyer},
+                    new() {NPCID.Spazmatism, NPCID.Retinazer, NPCID.SkeletronPrime},
+                    new() {NPCID.TheDestroyer, NPCID.SkeletronPrime}
+            } }, 
+            { "ForsakenSaber", new List<List<int>>{ // Forsaken Saber
+                    new() {NPCID.Spazmatism, NPCID.Retinazer, NPCID.TheDestroyer},
+                    new() {NPCID.Spazmatism, NPCID.Retinazer, NPCID.SkeletronPrime},
+                    new() {NPCID.TheDestroyer, NPCID.SkeletronPrime}
+            } }, 
+            { "FracturedArk", new List<List<int>>{ // Fractured Ark
+                    new() {ModContent.NPCType<SlimeGodCore>()}
+            } }, 
+            { "FreedomStar", new List<List<int>>{ // Freedom Star
+                    new() {ModContent.NPCType<Providence>()}
+            } }, 
+            { "FrigidflashBolt", new List<List<int>>{ // Frigidflash Bolt
+                    new() {NPCID.WallofFlesh}
+            } }, 
             { "FrostBlossomStaff", new List<List<int>>() }, // Frost Blossom Staff
             { "FrostBolt", new List<List<int>>() }, // Frost Bolt
-            { "FrostbiteBlaster", new List<List<int>>() }, // Frostbite Blaster
-            { "FrostcrushValari", new List<List<int>>() }, // Frostcrush Valari
-            { "FrostyFlare", new List<List<int>>() }, // Frosty Flare
-            { "FuelCellBundle", new List<List<int>>() }, // Fuel Cell Bundle
-            { "Fungicide", new List<List<int>>() }, // Fungicide
-            { "GacruxianMollusk", new List<List<int>>() }, // Gacruxian Mollusk
-            { "GaelsGreatsword", new List<List<int>>() }, // Gael's Greatsword
-            { "GalactusBlade", new List<List<int>>() }, // Galactus Blade
-            { "FourSeasonsGalaxia", new List<List<int>>() }, // Galaxia
-            { "GalaxySmasher", new List<List<int>>() }, // Galaxy Smasher
-            { "Galeforce", new List<List<int>>() }, // Galeforce
-            { "GalileoGladius", new List<List<int>>() }, // Galileo Gladius
-            { "GalvanizingGlaive", new List<List<int>>() }, // Galvanizing Glaive
-            { "GammaHeart", new List<List<int>>() }, // Gamma Heart
-            { "GastricBelcherStaff", new List<List<int>>() }, // Gastric Belcher Staff
-            { "GelDart", new List<List<int>>() }, // Gel Dart
-            { "GeliticBlade", new List<List<int>>() }, // Gelitic Blade
-            { "Genesis", new List<List<int>>() }, // Genesis
-            { "GhastlyVisage", new List<List<int>>() }, // Ghastly Visage
-            { "GhoulishGouger", new List<List<int>>() }, // Ghoulish Gouger
+            { "FrostbiteBlaster", new List<List<int>>{ // Frostbite Blaster
+                    new() {ModContent.NPCType<Cryogen>()}
+            } }, 
+            { "FrostcrushValari", new List<List<int>>{ // Frostcrush Valari
+                    new() {NPCID.Plantera}
+            } }, 
+            { "FrostyFlare", new List<List<int>>{ // Frosty Flare
+                    new() {ModContent.NPCType<Cryogen>(), NPCID.Spazmatism, NPCID.Retinazer, NPCID.TheDestroyer, NPCID.SkeletronPrime}
+            } }, 
+            { "FuelCellBundle", new List<List<int>>{ // Fuel Cell Bundle
+                    new() {ModContent.NPCType<PlaguebringerGoliath>()}
+            } }, 
+            { "Fungicide", new List<List<int>>{ // Fungicide
+                    new() {ModContent.NPCType<Crabulon>()}
+            } }, 
+            { "GacruxianMollusk", new List<List<int>>{ // Gacruxian Mollusk
+                    new() {NPCID.WallofFlesh}
+            } }, 
+            { "GaelsGreatsword", new List<List<int>>{ // Gael's Greatsword
+                    new() {ModContent.NPCType<SupremeCalamitas>()}
+            } }, 
+            { "GalactusBlade", new List<List<int>>{ // Galactus Blade
+                    new() {ModContent.NPCType<Providence>()}
+            } }, 
+            { "FourSeasonsGalaxia", new List<List<int>>{ // Galaxia
+                    new() {ModContent.NPCType<StormWeaverHead>(), ModContent.NPCType<CeaselessVoid>(), ModContent.NPCType<Signus>()}
+            } }, 
+            { "GalaxySmasher", new List<List<int>>{ // Galaxy Smasher
+                    new() {ModContent.NPCType<DevourerofGodsHead>()}
+            } }, 
+            { "Galeforce", new List<List<int>>{ // Galeforce
+                    new() {ModContent.NPCType<PerforatorHive>()},
+                    new() {ModContent.NPCType<HiveMind>()}
+            } }, 
+            { "GalileoGladius", new List<List<int>>{ // Galileo Gladius
+                    new() {ModContent.NPCType<Polterghast>()}
+            } }, 
+            { "GalvanizingGlaive", new List<List<int>>{ // Galvanizing Glaive
+                    new() {ModContent.NPCType<PlaguebringerGoliath>()}
+            } }, 
+            { "GammaHeart", new List<List<int>>{ // Gamma Heart
+                    new() {ModContent.NPCType<Polterghast>()}
+            } }, 
+            { "GastricBelcherStaff", new List<List<int>>{ // Gastric Belcher Staff
+                    new() {ModContent.NPCType<Anahita>(), ModContent.NPCType<Leviathan>()}
+            } }, 
+            { "GelDart", new List<List<int>>{ // Gel Dart
+                    new() {ModContent.NPCType<SlimeGodCore>()}
+            } }, 
+            { "GeliticBlade", new List<List<int>>{ // Gelitic Blade
+                    new() {ModContent.NPCType<SlimeGodCore>()}
+            } }, 
+            { "Genesis", new List<List<int>>{ // Genesis
+                    new() {NPCID.MoonLordCore}
+            } }, 
+            { "GhastlyVisage", new List<List<int>>{ // Ghastly Visage
+                    new() {ModContent.NPCType<Polterghast>()}
+            } }, 
+            { "GhoulishGouger", new List<List<int>>{ // Ghoulish Gouger
+                    new() {ModContent.NPCType<Polterghast>()}
+            } }, 
             { "GildedDagger", new List<List<int>>() }, // Gilded Dagger
-            { "GildedProboscis", new List<List<int>>() }, // Gilded Proboscis
-            { "GlacialEmbrace", new List<List<int>>() }, // Glacial Embrace
-            { "Glaive", new List<List<int>>() }, // Glaive
+            { "GildedProboscis", new List<List<int>>{ // Gilded Proboscis
+                    new() {ModContent.Find<ModNPC>("CalamityMod/Dragonfolly").Type}
+            } }, 
+            { "GlacialEmbrace", new List<List<int>>{ // Glacial Embrace
+                    new() {ModContent.NPCType<Cryogen>()}
+            } }, 
+            { "Glaive", new List<List<int>>{ // Glaive
+                    new() {NPCID.SkeletronHead}
+            } }, 
             { "GleamingDagger", new List<List<int>>() }, // Gleaming Dagger
-            { "GleamingMagnolia", new List<List<int>>() }, // Gleaming Magnolia
-            { "GloriousEnd", new List<List<int>>() }, // Glorious End
-            { "GodsParanoia", new List<List<int>>() }, // Gods' Paranoia
-            { "GoldenEagle", new List<List<int>>() }, // Golden Eagle
-            { "GoldplumeSpear", new List<List<int>>() }, // Goldplume Spear
-            { "Goobow", new List<List<int>>() }, // Goobow
-            { "GrandDad", new List<List<int>>() }, // Grand Dad
-            { "GrandGuardian", new List<List<int>>() }, // Grand Guardian
-            { "GraveGrimreaver", new List<List<int>>() }, // Grave Grimreaver
-            { "GreatswordofJudgement", new List<List<int>>() }, // Greatsword of Judgement
-            { "Greentide", new List<List<int>>() }, // Greentide
-            { "GruesomeEminence", new List<List<int>>() }, // Gruesome Eminence
-            { "GuidelightofOblivion", new List<List<int>>() }, // Guidelight of Oblivion
-            { "GunkShot", new List<List<int>>() }, // Gunk Shot
+            { "GleamingMagnolia", new List<List<int>>{ // Gleaming Magnolia
+                    new() {NPCID.Spazmatism, NPCID.Retinazer, NPCID.TheDestroyer, NPCID.SkeletronPrime}
+            } }, 
+            { "GloriousEnd", new List<List<int>>{ // Glorious End
+                    new() {NPCID.WallofFlesh}
+            } }, 
+            { "GodsParanoia", new List<List<int>>{ // Gods' Paranoia
+                    new() {ModContent.NPCType<DevourerofGodsHead>()}
+            } }, 
+            { "GoldenEagle", new List<List<int>>{ // Golden Eagle
+                    new() {ModContent.Find<ModNPC>("CalamityMod/Dragonfolly").Type}
+            } }, 
+            { "GoldplumeSpear", new List<List<int>>{ // Goldplume Spear
+                    new() {ModContent.NPCType<PerforatorHive>()},
+                    new() {ModContent.NPCType<HiveMind>()}
+            } }, 
+            { "Goobow", new List<List<int>>{ // Goobow
+                    new() {ModContent.NPCType<SlimeGodCore>()}
+            } }, 
+            { "GrandDad", new List<List<int>>{ // Grand Dad
+                    new() {ModContent.NPCType<Signus>()}
+            } }, 
+            { "GrandGuardian", new List<List<int>>{ // Grand Guardian
+                    new() {NPCID.CultistBoss}
+            } }, 
+            { "GraveGrimreaver", new List<List<int>>{ // Grave Grimreaver
+                    new() {NPCID.SkeletronPrime}
+            } }, 
+            { "GreatswordofJudgement", new List<List<int>>{ // Greatsword of Judgement
+                    new() {NPCID.MoonLordCore}
+            } }, 
+            { "Greentide", new List<List<int>>{ // Greentide
+                    new() {ModContent.NPCType<Anahita>(), ModContent.NPCType<Leviathan>()}
+            } }, 
+            { "GruesomeEminence", new List<List<int>>{ // Gruesome Eminence
+                    new() {ModContent.NPCType<SupremeCalamitas>()}
+            } }, 
+            { "GuidelightofOblivion", new List<List<int>>{ // Guidelight of Oblivion
+                    new() {ModContent.NPCType<Providence>()}
+            } }, 
+            { "GunkShot", new List<List<int>>{ // Gunk Shot
+                    new() {ModContent.NPCType<SlimeGodCore>()}
+            } }, 
             { "HadalUrn", new List<List<int>>() }, // Hadal Urn
             { "HalibutCannon", new List<List<int>>() }, // Halibut Cannon
             { "HalleysInferno", new List<List<int>>() }, // Halley's Inferno
