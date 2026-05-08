@@ -3,16 +3,19 @@ using CalamityMod.NPCs.AstrumAureus;
 using CalamityMod.NPCs.AstrumDeus;
 using CalamityMod.NPCs.BrimstoneElemental;
 using CalamityMod.NPCs.CalClone;
+using CalamityMod.NPCs.CeaselessVoid;
 using CalamityMod.NPCs.Cryogen;
 using CalamityMod.NPCs.DesertScourge;
 using CalamityMod.NPCs.DevourerofGods;
 using CalamityMod.NPCs.ExoMechs.Apollo;
 using CalamityMod.NPCs.HiveMind;
 using CalamityMod.NPCs.Leviathan;
+using CalamityMod.NPCs.OldDuke;
 using CalamityMod.NPCs.Perforator;
 using CalamityMod.NPCs.PlaguebringerGoliath;
 using CalamityMod.NPCs.Polterghast;
 using CalamityMod.NPCs.Providence;
+using CalamityMod.NPCs.Ravager;
 using CalamityMod.NPCs.Signus;
 using CalamityMod.NPCs.SlimeGod;
 using CalamityMod.NPCs.StormWeaver;
@@ -366,97 +369,283 @@ namespace CalamityWeaponChecklist
             { "Buzzkill", new List<List<int>>{ // Buzzkill
                     new() {NPCID.SkeletronPrime}
             } }, 
-            { "CadaverousCarrion", new List<List<int>>() }, // Cadaverous Carrion
-            { "CalamarisLament", new List<List<int>>() }, // Calamari's Lament
-            { "Carnage", new List<List<int>>() }, // Carnage
-            { "CausticCroakerStaff", new List<List<int>>() }, // Caustic Croaker Staff
-            { "TrueCausticEdge", new List<List<int>>() }, // Caustic Edge
-            { "CausticStaff", new List<List<int>>() }, // Caustic Staff
-            { "CelestialClaymore", new List<List<int>>() }, // Celestial Claymore
-            { "CelestialReaper", new List<List<int>>() }, // Celestial Reaper
-            { "Celestus", new List<List<int>>() }, // Celestus
-            { "ChickenCannon", new List<List<int>>() }, // Chicken Cannon
-            { "ChromaticEruption", new List<List<int>>() }, // Chromatic Eruption
-            { "ChronomancersScythe", new List<List<int>>() }, // Chronomancer's Scythe
-            { "CinderBlossomStaff", new List<List<int>>() }, // Cinder Blossom Staff
-            { "CindersOfLament", new List<List<int>>() }, // Cinders of Lament
-            { "Cinquedea", new List<List<int>>() }, // Cinquedea
-            { "ClamCrusher", new List<List<int>>() }, // Clam Crusher
-            { "ClamorRifle", new List<List<int>>() }, // Clamor Rifle
-            { "ClaretCannon", new List<List<int>>() }, // Claret Cannon
-            { "CleansingBlaze", new List<List<int>>() }, // Cleansing Blaze
-            { "ClockworkBow", new List<List<int>>() }, // Clockwork Bow
-            { "ClothiersWrath", new List<List<int>>() }, // Clothier's Wrath
-            { "Cnidarian", new List<List<int>>() }, // Cnidarian
-            { "CobaltKunai", new List<List<int>>() }, // Cobalt Kunai
-            { "ColdheartIcicle", new List<List<int>>() }, // Coldheart Icicle
-            { "CometQuasher", new List<List<int>>() }, // Comet Quasher
-            { "Condemnation", new List<List<int>>() }, // Condemnation
-            { "ConferenceCall", new List<List<int>>() }, // Conference Call
-            { "ConsecratedWater", new List<List<int>>() }, // Consecrated Water
-            { "Contagion", new List<List<int>>() }, // Contagion
+            { "CadaverousCarrion", new List<List<int>>{ // Cadaverous Carrion
+                    new() {ModContent.NPCType<OldDuke>()}
+            } }, 
+            { "CalamarisLament", new List<List<int>>{ // Calamari's Lament
+                    new() {ModContent.NPCType<Polterghast>()}
+            } }, 
+            { "Carnage", new List<List<int>>{ // Carnage
+                    new() {NPCID.WallofFlesh}
+            } }, 
+            { "CausticCroakerStaff", new List<List<int>>{ // Caustic Croaker Staff
+                    new() {NPCID.EyeofCthulhu},
+                    new() {NPCID.WallofFlesh}
+            } }, 
+            { "TrueCausticEdge", new List<List<int>>{ // Caustic Edge
+                    new() {NPCID.WallofFlesh}
+            } }, 
+            { "CausticStaff", new List<List<int>>{ // Caustic Staff
+                    new() {NPCID.WallofFlesh}
+            } }, 
+            { "CelestialClaymore", new List<List<int>>{ // Celestial Claymore
+                    new() {NPCID.WallofFlesh}
+            } }, 
+            { "CelestialReaper", new List<List<int>>{ // Celestial Reaper
+                    new() {NPCID.MoonLordCore}
+            } }, 
+            { "Celestus", new List<List<int>>{ // Celestus
+                    new() {ModContent.NPCType<Apollo>()}
+            } }, 
+            { "ChickenCannon", new List<List<int>>{ // Chicken Cannon
+                    new() {ModContent.NPCType<Yharon>()}
+            } }, 
+            { "ChromaticEruption", new List<List<int>>{ // Chromatic Eruption
+                    new() {NPCID.MoonLordCore}
+            } }, 
+            { "ChronomancersScythe", new List<List<int>>{ // Chronomancer's Scythe
+                    new() {NPCID.MoonLordCore}
+            } }, 
+            { "CinderBlossomStaff", new List<List<int>>{ // Cinder Blossom Staff
+                    new() {NPCID.BrainofCthulhu},
+                    new() {NPCID.EaterofWorldsHead}
+            } }, 
+            { "CindersOfLament", new List<List<int>>{ // Cinders of Lament
+                    new() {ModContent.NPCType<SupremeCalamitas>()}
+            } }, 
+            { "Cinquedea", new List<List<int>>{ // Cinquedea
+                    new() {NPCID.SkeletronHead}
+            } }, 
+            { "ClamCrusher", new List<List<int>>{ // Clam Crusher
+                    new() {ModContent.NPCType<DesertScourgeHead>()}
+            } }, 
+            { "ClamorRifle", new List<List<int>>{ // Clamor Rifle
+                    new() {NPCID.WallofFlesh}
+            } }, 
+            { "ClaretCannon", new List<List<int>>{ // Claret Cannon
+                    new() {ModContent.NPCType<Providence>()}
+            } }, 
+            { "CleansingBlaze", new List<List<int>>{ // Cleansing Blaze
+                    new() {ModContent.NPCType<DevourerofGodsHead>()}
+            } }, 
+            { "ClockworkBow", new List<List<int>>{ // Clockwork Bow
+                    new() {NPCID.MoonLordCore}
+            } }, 
+            { "ClothiersWrath", new List<List<int>>{ // Clothier's Wrath
+                    new() {NPCID.SkeletronHead}
+            } }, 
+            { "Cnidarian", new List<List<int>>{ // Cnidarian
+                    new() {ModContent.NPCType<DesertScourgeHead>()}
+            } }, 
+            { "CobaltKunai", new List<List<int>>{ // Cobalt Kunai
+                    new() {NPCID.WallofFlesh}
+            } }, 
+            { "ColdheartIcicle", new List<List<int>>{ // Coldheart Icicle
+                    new() {ModContent.NPCType<SupremeCalamitas>()}
+            } }, 
+            { "CometQuasher", new List<List<int>>{ // Comet Quasher
+                    new() {NPCID.WallofFlesh}
+            } }, 
+            { "Condemnation", new List<List<int>>{ // Condemnation
+                    new() {ModContent.NPCType<SupremeCalamitas>()}
+            } }, 
+            { "ConferenceCall", new List<List<int>>{ // Conference Call
+                    new() {NPCID.CultistBoss}
+            } }, 
+            { "ConsecratedWater", new List<List<int>>{ // Consecrated Water
+                    new() {NPCID.TheDestroyer, NPCID.Retinazer, NPCID.Spazmatism},
+                    new() {NPCID.Retinazer, NPCID.Spazmatism, NPCID.SkeletronPrime},
+                    new() {NPCID.SkeletronPrime, NPCID.TheDestroyer}
+            } }, 
+            { "Contagion", new List<List<int>>{ // Contagion
+                    new() {ModContent.NPCType<SupremeCalamitas>()}
+            } }, 
             { "ContaminatedBile", new List<List<int>>() }, // Contaminated Bile
-            { "ContinentalGreatbow", new List<List<int>>() }, // Continental Greatbow
-            { "CoralSpout", new List<List<int>>() }, // Coral Spout
-            { "CorinthPrime", new List<List<int>>() }, // Corinth Prime
-            { "CorpusAvertor", new List<List<int>>() }, // Corpus Avertor
-            { "CorrodedCaustibow", new List<List<int>>() }, // Corroded Caustibow
-            { "CorroslimeStaff", new List<List<int>>() }, // Corroslime Staff
-            { "CorvidHarbringerStaff", new List<List<int>>() }, // Corvid Harbinger Staff
-            { "CosmicDischarge", new List<List<int>>() }, // Cosmic Discharge
-            { "CosmicImmaterializer", new List<List<int>>() }, // Cosmic Immaterializer
-            { "CosmicKunai", new List<List<int>>() }, // Cosmic Kunai
-            { "CosmicRainbow", new List<List<int>>() }, // Cosmic Rainbow
-            { "CosmicShiv", new List<List<int>>() }, // Cosmic Shiv
-            { "CosmicViperEngine", new List<List<int>>() }, // Cosmic Viper Engine
-            { "Cosmilamp", new List<List<int>>() }, // Cosmilamp
+            { "ContinentalGreatbow", new List<List<int>>{ // Continental Greatbow
+                    new() {NPCID.Golem}
+            } }, 
+            { "CoralSpout", new List<List<int>>{ // Coral Spout
+                    new() {ModContent.NPCType<DesertScourgeHead>()}
+            } }, 
+            { "CorinthPrime", new List<List<int>>{ // Corinth Prime
+                    new() {ModContent.NPCType<StormWeaverHead>()}
+            } }, 
+            { "CorpusAvertor", new List<List<int>>{ // Corpus Avertor
+                    new() {ModContent.NPCType<RavagerBody>()}
+            } }, 
+            { "CorrodedCaustibow", new List<List<int>>{ // Corroded Caustibow
+                    new() {ModContent.NPCType<AquaticScourgeHead>()}
+            } }, 
+            { "CorroslimeStaff", new List<List<int>>{ // Corroslime Staff
+                    new() {ModContent.NPCType<SlimeGodCore>()}
+            } }, 
+            { "CorvidHarbringerStaff", new List<List<int>>{ // Corvid Harbinger Staff
+                    new() {ModContent.NPCType<DevourerofGodsHead>()}
+            } }, 
+            { "CosmicDischarge", new List<List<int>>{ // Cosmic Discharge
+                    new() {ModContent.NPCType<DevourerofGodsHead>()}
+            } }, 
+            { "CosmicImmaterializer", new List<List<int>>{ // Cosmic Immaterializer
+                    new() {ModContent.NPCType<Apollo>()}
+            } }, 
+            { "CosmicKunai", new List<List<int>>{ // Cosmic Kunai
+                    new() {ModContent.NPCType<Signus>()}
+            } }, 
+            { "CosmicRainbow", new List<List<int>>{ // Cosmic Rainbow
+                    new() {NPCID.MoonLordCore}
+            } }, 
+            { "CosmicShiv", new List<List<int>>{ // Cosmic Shiv
+                    new() {ModContent.NPCType<DevourerofGodsHead>()}
+            } }, 
+            { "CosmicViperEngine", new List<List<int>>{ // Cosmic Viper Engine
+                    new() {ModContent.NPCType<DevourerofGodsHead>()}
+            } }, 
+            { "Cosmilamp", new List<List<int>>{ // Cosmilamp
+                    new() {ModContent.NPCType<Signus>()}
+            } }, 
             { "CrackshotColt", new List<List<int>>() }, // Crackshot Colt
-            { "CraniumSmasher", new List<List<int>>() }, // Cranium Smasher
-            { "CrescentMoon", new List<List<int>>() }, // Crescent Moon
-            { "CrimslimeStaff", new List<List<int>>() }, // Crimslime Staff
-            { "CrushsawCrasher", new List<List<int>>() }, // Crushsaw Crasher
-            { "CryogenicStaff", new List<List<int>>() }, // Cryogenic Staff
-            { "Cryophobia", new List<List<int>>() }, // Cryophobia
-            { "CrystalPiercer", new List<List<int>>() }, // Crystal Piercer
-            { "Crystalline", new List<List<int>>() }, // Crystalline
-            { "CursedDagger", new List<List<int>>() }, // Cursed Dagger
-            { "DaedalusGolemStaff", new List<List<int>>() }, // Daedalus Golem Staff
-            { "DaemonsFlame", new List<List<int>>() }, // Daemon's Flame
-            { "DankStaff", new List<List<int>>() }, // Dank Staff
-            { "DarkSpark", new List<List<int>>() }, // Dark Spark
-            { "DarkechoGreatbow", new List<List<int>>() }, // Darkecho Greatbow
-            { "DarklightGreatsword", new List<List<int>>() }, // Darklight Greatsword
-            { "DazzlingStabberStaff", new List<List<int>>() }, // Dazzling Stabber Staff
-            { "DeadSunsWind", new List<List<int>>() }, // Dead Sun's Wind
-            { "DeathValleyDuster", new List<List<int>>() }, // Death Valley Duster
-            { "DeathsAscension", new List<List<int>>() }, // Death's Ascension
-            { "DeathstareRod", new List<List<int>>() }, // Deathstare Rod
-            { "DeepSeaDumbbell", new List<List<int>>() }, // Deep Sea Dumbbell
-            { "DeepWounder", new List<List<int>>() }, // Deep Wounder
-            { "DeepcoreGK2", new List<List<int>>() }, // Deepcore GK2
-            { "DeepseaStaff", new List<List<int>>() }, // Deepsea Staff
-            { "DefectiveSphere", new List<List<int>>() }, // Defective Sphere
-            { "DefiledGreatsword", new List<List<int>>() }, // Defiled Greatsword
+            { "CraniumSmasher", new List<List<int>>{ // Cranium Smasher
+                    new() {ModContent.NPCType<RavagerBody>()}
+            } }, 
+            { "CrescentMoon", new List<List<int>>{ // Crescent Moon
+                    new() {ModContent.NPCType<Polterghast>()}
+            } }, 
+            { "CrimslimeStaff", new List<List<int>>{ // Crimslime Staff
+                    new() {ModContent.NPCType<SlimeGodCore>()}
+            } }, 
+            { "CrushsawCrasher", new List<List<int>>{ // Crushsaw Crasher
+                    new() {ModContent.NPCType<CalamitasClone>()}
+            } }, 
+            { "CryogenicStaff", new List<List<int>>{ // Cryogenic Staff
+                    new() {NPCID.Spazmatism, NPCID.Retinazer, NPCID.TheDestroyer, NPCID.SkeletronPrime}
+            } }, 
+            { "Cryophobia", new List<List<int>>{ // Cryophobia
+                    new() {NPCID.Spazmatism, NPCID.Retinazer, NPCID.TheDestroyer, NPCID.SkeletronPrime}
+            } }, 
+            { "CrystalPiercer", new List<List<int>>{ // Crystal Piercer
+                    new() {ModContent.NPCType<Cryogen>(), NPCID.Spazmatism, NPCID.Retinazer, NPCID.TheDestroyer},
+                    new() {ModContent.NPCType<Cryogen>(), NPCID.Spazmatism, NPCID.Retinazer, NPCID.SkeletronPrime},
+                    new() {ModContent.NPCType<Cryogen>(), NPCID.SkeletronPrime, NPCID.TheDestroyer}
+            } }, 
+            { "Crystalline", new List<List<int>>() }, // Crystalline    
+            { "CursedDagger", new List<List<int>>{ // Cursed Dagger
+                    new() {NPCID.WallofFlesh}
+            } }, 
+            { "DaedalusGolemStaff", new List<List<int>>{ // Daedalus Golem Staff
+                    new() {ModContent.NPCType<Cryogen>(), NPCID.Spazmatism, NPCID.Retinazer, NPCID.TheDestroyer},
+                    new() {ModContent.NPCType<Cryogen>(), NPCID.Spazmatism, NPCID.Retinazer, NPCID.SkeletronPrime},
+                    new() {ModContent.NPCType<Cryogen>(), NPCID.SkeletronPrime, NPCID.TheDestroyer}
+            } }, 
+            { "DaemonsFlame", new List<List<int>>{ // Daemon's Flame
+                    new() {ModContent.NPCType<Polterghast>()}
+            } }, 
+            { "DankStaff", new List<List<int>>{ // Dank Staff
+                    new() {ModContent.NPCType<HiveMind>()}
+            } }, 
+            { "DarkSpark", new List<List<int>>{ // Dark Spark
+                    new() {ModContent.NPCType<CeaselessVoid>(), ModContent.NPCType<Polterghast>()}
+            } }, 
+            { "DarkechoGreatbow", new List<List<int>>{ // Darkecho Greatbow
+                    new() {ModContent.NPCType<Cryogen>(), NPCID.Spazmatism, NPCID.Retinazer, NPCID.TheDestroyer},
+                    new() {ModContent.NPCType<Cryogen>(), NPCID.Spazmatism, NPCID.Retinazer, NPCID.SkeletronPrime},
+                    new() {ModContent.NPCType<Cryogen>(), NPCID.SkeletronPrime, NPCID.TheDestroyer}
+            } }, 
+            { "DarklightGreatsword", new List<List<int>>{ // Darklight Greatsword
+                    new() {ModContent.NPCType<Cryogen>(), NPCID.Spazmatism, NPCID.Retinazer, NPCID.TheDestroyer},
+                    new() {ModContent.NPCType<Cryogen>(), NPCID.Spazmatism, NPCID.Retinazer, NPCID.SkeletronPrime},
+                    new() {ModContent.NPCType<Cryogen>(), NPCID.SkeletronPrime, NPCID.TheDestroyer}
+            } }, 
+            { "DazzlingStabberStaff", new List<List<int>>{ // Dazzling Stabber Staff
+                    new() {ModContent.NPCType<Providence>()}
+            } }, 
+            { "DeadSunsWind", new List<List<int>>{ // Dead Sun's Wind
+                    new() {NPCID.CultistBoss}
+            } }, 
+            { "DeathValleyDuster", new List<List<int>>{ // Death Valley Duster
+                    new() {NPCID.WallofFlesh}
+            } }, 
+            { "DeathsAscension", new List<List<int>>{ // Death's Ascension
+                    new() {ModContent.NPCType<Polterghast>(), ModContent.NPCType<Signus>()}
+            } }, 
+            { "DeathstareRod", new List<List<int>>{ // Deathstare Rod
+                    new() {NPCID.EyeofCthulhu}
+            } }, 
+            { "DeepSeaDumbbell", new List<List<int>>{ // Deep Sea Dumbbell
+                    new() {ModContent.NPCType<Polterghast>()}
+            } }, 
+            { "DeepWounder", new List<List<int>>{ // Deep Wounder
+                    new() {ModContent.NPCType<CalamitasClone>()}
+            } }, 
+            { "DeepcoreGK2", new List<List<int>>{ // Deepcore GK2
+                    new() {NPCID.Spazmatism, NPCID.Retinazer},
+                    new() {NPCID.TheDestroyer},
+                    new() {NPCID.SkeletronPrime}
+            } }, 
+            { "DeepseaStaff", new List<List<int>>{ // Deepsea Staff
+                    new() {ModContent.NPCType<AquaticScourgeHead>()}
+            } }, 
+            { "DefectiveSphere", new List<List<int>>{ // Defective Sphere
+                    new() {NPCID.Plantera}
+            } }, 
+            { "DefiledGreatsword", new List<List<int>>{ // Defiled Greatsword
+                    new() {ModContent.NPCType<Providence>()}
+            } }, 
             { "DepthCrusher", new List<List<int>>() }, // Depth Crusher
-            { "DesecratedWater", new List<List<int>>() }, // Desecrated Water
-            { "DevilsDevastation", new List<List<int>>() }, // Devil's Devastation
-            { "DevilsSunrise", new List<List<int>>() }, // Devil's Sunrise
-            { "DimensionTearingDisk", new List<List<int>>() }, // Dimension-Tearing Disk
-            { "DoomsdayDevice", new List<List<int>>() }, // Doomsday Device
-            { "DormantBrimseeker", new List<List<int>>() }, // Dormant Brimseeker
-            { "Downpour", new List<List<int>>() }, // Downpour
-            { "DraconicDestruction", new List<List<int>>() }, // Draconic Destruction
-            { "DragonPow", new List<List<int>>() }, // Dragon Pow
-            { "DragonRage", new List<List<int>>() }, // Dragon Rage
-            { "DragonsBreath", new List<List<int>>() }, // Dragon's Breath
-            { "DragonbloodDisgorger", new List<List<int>>() }, // Dragonblood Disgorger
-            { "Drataliornus", new List<List<int>>() }, // Drataliornus
-            { "DreadmineStaff", new List<List<int>>() }, // Dreadmine Staff
+            { "DesecratedWater", new List<List<int>>{ // Desecrated Water
+                    new() {NPCID.TheDestroyer, NPCID.Retinazer, NPCID.Spazmatism},
+                    new() {NPCID.Retinazer, NPCID.Spazmatism, NPCID.SkeletronPrime},
+                    new() {NPCID.SkeletronPrime, NPCID.TheDestroyer}
+            } }, 
+            { "DevilsDevastation", new List<List<int>>{ // Devil's Devastation
+                    new() {ModContent.NPCType<DevourerofGodsHead>()}
+            } }, 
+            { "DevilsSunrise", new List<List<int>>{ // Devil's Sunrise
+                    new() {ModContent.NPCType<Providence>()}
+            } }, 
+            { "DimensionTearingDisk", new List<List<int>>{ // Dimension-Tearing Disk
+                    new() {ModContent.NPCType<DevourerofGodsHead>()}
+            } }, 
+            { "DoomsdayDevice", new List<List<int>>{ // Doomsday Device
+                    new() {NPCID.Golem}
+            } }, 
+            { "DormantBrimseeker", new List<List<int>>{ // Dormant Brimseeker
+                    new() {ModContent.NPCType<BrimstoneElemental>()}
+            } }, 
+            { "Downpour", new List<List<int>>{ // Downpour
+                    new() {ModContent.NPCType<AquaticScourgeHead>()}
+            } }, 
+            { "DraconicDestruction", new List<List<int>>{ // Draconic Destruction
+                    new() {ModContent.NPCType<SupremeCalamitas>()}
+            } }, 
+            { "DragonPow", new List<List<int>>{ // Dragon Pow
+                    new() {ModContent.NPCType<Yharon>()}
+            } }, 
+            { "DragonRage", new List<List<int>>{ // Dragon Rage
+                    new() {ModContent.NPCType<Yharon>()}
+            } }, 
+            { "DragonsBreath", new List<List<int>>{ // Dragon's Breath
+                    new() {ModContent.NPCType<Yharon>()}
+            } }, 
+            { "DragonbloodDisgorger", new List<List<int>>{ // Dragonblood Disgorger
+                    new() {ModContent.NPCType<Providence>()}
+            } }, 
+            { "Drataliornus", new List<List<int>>{ // Drataliornus
+                    new() {ModContent.NPCType<Yharon>()}
+            } }, 
+            { "DreadmineStaff", new List<List<int>>{ // Dreadmine Staff
+                    new() {ModContent.NPCType<Anahita>(), ModContent.NPCType<Leviathan>()}
+            } }, 
             { "DriftwoodBow", new List<List<int>>() }, // Driftwood Bow
             { "DriftwoodSword", new List<List<int>>() }, // Driftwood Sword
-            { "DukesDecapitator", new List<List<int>>() }, // Duke's Decapitator
-            { "DuststormInABottle", new List<List<int>>() }, // Duststorm in a Bottle
-            { "DynamicPursuer", new List<List<int>>() }, // Dynamic Pursuer
+            { "DukesDecapitator", new List<List<int>>{ // Duke's Decapitator
+                    new() {NPCID.DukeFishron}
+            } }, 
+            { "DuststormInABottle", new List<List<int>>{ // Duststorm in a Bottle
+                    new() {NPCID.Plantera}
+            } }, 
+            { "DynamicPursuer", new List<List<int>>{ // Dynamic Pursuer
+                    new() {ModContent.NPCType<Yharon>()}
+            } }, 
             { "Earth", new List<List<int>>() }, // Earth
             { "EarthenPike", new List<List<int>>() }, // Earthen Pike
             { "EclipsesFall", new List<List<int>>() }, // Eclipse's Fall
